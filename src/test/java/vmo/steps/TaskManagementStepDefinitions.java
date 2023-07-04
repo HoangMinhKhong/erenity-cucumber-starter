@@ -46,4 +46,9 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
     public void clickChooseDueDate(){
         taskAction.clickChooseDueDate();
     }
+
+    @And("Click choose PIC")
+    public void clickChoosePIC(){
+        taskAction.clickChoosePIC();
+    }
 }

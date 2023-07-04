@@ -9,6 +9,5 @@ Feature: Task Management
     And Enter task name is "Auto test"
     And Click choose priority
     And Click choose due date
-#    And Click choose pic
-#    And Click choose reporter
+    And Click choose PIC
 #    Then Verify new task management
