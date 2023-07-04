@@ -1,6 +1,7 @@
 package vmo.pages.login;
 
 import net.serenitybdd.core.steps.UIInteractionSteps;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class LoginAction extends UIInteractionSteps {
 

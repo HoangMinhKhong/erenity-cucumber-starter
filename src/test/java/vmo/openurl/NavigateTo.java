@@ -8,4 +8,9 @@ public class NavigateTo {
     public void openBrowser(){
         myECHomePage.open();
     }
+
+    @Step("Close browser")
+    public void closeBrowser(){
+        myECHomePage.getDriver().close();
+    }
 }

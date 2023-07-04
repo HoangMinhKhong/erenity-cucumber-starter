@@ -41,24 +41,40 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
 
     @And("Click choose due date")
     public void clickChooseDueDate(){
-        taskAction.clickChooseDueDate();
+        taskAction.chooseNewDate();
     }
 
+    @And("Click choose pic")
+    public void clickChoosePic(){
+        taskAction.clickChoosePIC();
+    }
+
+
     //Edit task management steps
-    @Given("User search (.*?) to edit")
+    @Given("User search {string} to edit")
     public void userSearchSearchKeyToEdit(String search) {
         taskAction.searchTask(search);
     }
 
-    @When("Click on edit button by search key (.*?)")
+    @When("Click on edit button by search key {string}")
     public void clickOnEditButton(String search) {
         taskAction.clickEditButton(search);
     }
 
-    @And("Edit information of task with priority (.*?)")
-    public void editInformationOfTask(String priority) {
-        taskAction.selectPriority(priority);
-        taskVerify.selectedValueShouldBeCorrect(priority);
+    @When("Click on delete button by search key {string}")
+    public void clickOnDeleteButton(String search) {
+        taskAction.clickDeleteButton(search);
+    }
+
+    @And("Edit information of task")
+    public void editInformationOfTask() {
+        taskAction.enterTaskName("Automation demo");
+//        taskAction.selectPriority(priority);
+//        taskVerify.selectedValueShouldBeCorrect(priority);
+        taskAction.removeOldDateAndChooseNewDate();
+        taskAction.selectPIC();
+//        taskAction.selectRandomReporter();
+        taskAction.inputNote("This is message for demo automation. Thank you!");
     }
 
     @And("User click save button")
@@ -66,7 +82,7 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
         taskAction.submitEdit();
     }
 
-    @Then("System shows success message (.*?)")
+    @Then("System shows success message should be {string}")
     public void systemShowsSuccessMessage(String message) {
         taskVerify.messageSuccessShouldBeDisplay();
         taskVerify.messageSuccessShouldContain(message);
@@ -77,8 +93,19 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
         taskVerify.editFormShouldBeDisplay();
     }
 
-    @Then("Search result should be contain (.*?)")
+    @Then("Delete task popup should be display")
+    public void deleteTaskShouldBeDisplay() {
+        taskVerify.deleteTaskShouldBeDisplay();
+    }
+
+    @Then("Search result should be contain {string}")
     public void searchResultShouldBeContainSearchKey(String search) {
         taskVerify.searchResultShouldContain(search);
+    }
+
+    @And("User click confirm delete task")
+    public void userClickConfirmDeleteTask() {
+        taskAction.clickConfirmDelete();
+
     }
 }

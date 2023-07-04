@@ -1,8 +1,10 @@
 package vmo.helper;
 
 
+import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import org.openqa.selenium.By;
+import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
 
@@ -10,7 +12,7 @@ import java.util.*;
 
 public class ElementHelper extends UIInteractionSteps {
 
-    public By getElementBy(String name, String tempXpath) {
+    public static By getElementBy(String name, String tempXpath) {
         String actualXpath = tempXpath.replace("${name}", name);
         return By.xpath(actualXpath);
     }
@@ -38,7 +40,7 @@ public class ElementHelper extends UIInteractionSteps {
         List<String> valueList = new ArrayList<>();
         List<WebElement> listElement = getDriver().findElements(element);
         System.out.println("Size of element:" + listElement.size());
-        System.out.println("Element is:"+element);
+        System.out.println("Element is:" + element);
 
         for (WebElement e : listElement) {
             String value;
@@ -55,7 +57,7 @@ public class ElementHelper extends UIInteractionSteps {
         return valueList;
     }
 
-    public int getSizeOfListElement(By element){
+    public int getSizeOfListElement(By element) {
         List<WebElement> listElement = getDriver().findElements(element);
         return listElement.size();
     }
@@ -72,26 +74,52 @@ public class ElementHelper extends UIInteractionSteps {
         return map;
     }
 
-   public boolean checkElementPresent(By e){
+    public boolean checkElementPresent(By e) {
         Boolean present;
-        List<WebElement> elementList= getDriver().findElements(e);
-        if(elementList.size()>=1){
+        List<WebElement> elementList = getDriver().findElements(e);
+        if (elementList.size() >= 1) {
             present = true;
-        }
-        else
+        } else
             present = false;
-        return  present;
-   }
+        return present;
+    }
 
-   public void selectRandomValue(By element){
-       Select dropdown = new Select(getDriver().findElement(element));
-       List<WebElement> options = dropdown.getOptions();
-       int randomIndex = new Random().nextInt(options.size());
-       dropdown.selectByIndex(randomIndex);
-   }
-
-    public void selectByLabel(By element, String label){
+    public void selectRandomValue(By element) {
         Select dropdown = new Select(getDriver().findElement(element));
+        List<WebElement> options = dropdown.getOptions();
+        int randomIndex = new Random().nextInt(options.size());
+        dropdown.selectByIndex(randomIndex);
+    }
+
+    public void selectByLabel(WebElementFacade element, String label) {
+        Select dropdown = new Select(element);
         dropdown.selectByVisibleText(label);
     }
+
+    public void delayInSeconds(long seconds) {
+        try {
+            Thread.sleep(seconds * 1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void clearText(WebElementFacade webElementFacade) {
+        webElementFacade.sendKeys(Keys.CONTROL + "a");
+        webElementFacade.sendKeys(Keys.DELETE);
+    }
+
+    public String randomString(int length) {
+        String characters = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+        Random random = new Random();
+        StringBuilder stringBuilder = new StringBuilder();
+
+        for (int i = 0; i < length; i++) {
+            int index = random.nextInt(characters.length());
+            char randomChar = characters.charAt(index);
+            stringBuilder.append(randomChar);
+        }
+        return stringBuilder.toString();
+    }
 }
+
