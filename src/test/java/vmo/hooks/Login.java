@@ -20,7 +20,6 @@ public class Login {
         }
     }
 
-    @Before(order = 1, value = "@taskManagement")
     public void loginSuccess() {
         if (!beforeFeature) {
             navigateTo.openBrowser();

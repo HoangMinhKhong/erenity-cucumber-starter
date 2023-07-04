@@ -4,8 +4,8 @@ Feature: Task Management
     Given Click on Task Management
 
   Scenario: Add Task Management Success
-    When Click on Task Management
-#    When Click choose metting
+    When Click on button add
+    When Click choose meeting
 #    And Enter task nam
 #    And Click choose priority
 #    And click choose due date

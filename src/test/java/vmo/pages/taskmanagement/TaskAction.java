@@ -10,14 +10,19 @@ import java.time.Duration;
 public class TaskAction extends UIInteractionSteps {
 
     public void clickOnTaskManagement(){
-        withTimeoutOf(Duration.ofSeconds(30))
-                .find(TaskElements.TASK_MANAGEMENT)
-                .isDisplayed();
-        $(TaskElements.TASK_MANAGEMENT).click();
+        $(TaskElements.TASK_MANAGEMENT).withTimeoutOf(Duration.ofSeconds(10)).click();
     }
 
     public void clickOnButtonAdd(){
-//        $(TaskElements.BUTTON_ADD).click();
+        $(TaskElements.BUTTON_ADD).click();
     }
 
+    public void clickChooseMeeting(){
+        $(TaskElements.MEETING_SEARCH).click();
+        $(TaskElements.MEETING_MYEC).click();
+    }
+
+    public void enterTaskName(){
+
+    }
 }

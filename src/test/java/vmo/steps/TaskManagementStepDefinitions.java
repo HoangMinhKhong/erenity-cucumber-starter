@@ -22,8 +22,13 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
         taskAction.clickOnTaskManagement();
     }
 
-    @Given("Click on button add")
+    @When("Click on button add")
     public void clickOnButtonAdd(){
         taskAction.clickOnButtonAdd();
+    }
+
+    @And("Click choose meeting")
+    public void clickChooseMeeting(){
+
     }
 }

@@ -11,6 +11,7 @@ public class HookTaskManagement {
 
     @Steps
     NavigateTo navigateTo;
+    @Steps
     Login login;
     @Before(order = 0, value = "@taskManagement")
     public void login(){
