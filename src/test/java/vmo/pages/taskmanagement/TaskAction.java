@@ -22,7 +22,23 @@ public class TaskAction extends UIInteractionSteps {
         $(TaskElements.MEETING_MYEC).click();
     }
 
-    public void enterTaskName(){
+    public void enterTaskName(String taskName){
+        $(TaskElements.TASK_NAME).click();
+        $(TaskElements.TASK_NAME).sendKeys(taskName);
+    }
 
+    public void clickChoosePriority(){
+        $(TaskElements.PRIORITY).click();
+        $(TaskElements.PRIORITY_NORMAL).click();
+    }
+
+    public void clickChooseDueDate(){
+        $(TaskElements.DUE_DATA).click();
+        $(TaskElements.TODAY).click();
+    }
+
+    public void clickChoosePIC(){
+        $(TaskElements.PIC).click();
+        $(TaskElements.PIC_USER).click();
     }
 }

@@ -29,6 +29,21 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
 
     @And("Click choose meeting")
     public void clickChooseMeeting(){
+        taskAction.clickChooseMeeting();
+    }
 
+    @And("Enter task name is {string}")
+    public void enterTaskName(String taskName){
+        taskAction.enterTaskName(taskName);
+    }
+
+    @And("Click choose priority")
+    public void clickChoosePriority(){
+        taskAction.clickChoosePriority();
+    }
+
+    @And("Click choose due date")
+    public void clickChooseDueDate(){
+        taskAction.clickChooseDueDate();
     }
 }
