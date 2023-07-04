@@ -6,73 +6,79 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.thucydides.core.annotations.Steps;
-import vmo.pages.login.LoginAction;
-import vmo.pages.login.LoginVerify;
-import vmo.pages.taskmanagement.taskAction;
-import vmo.pages.taskmanagement.taskVerify;
+import vmo.pages.taskmanagement.TaskAction;
+import vmo.pages.taskmanagement.TaskVerify;
 
 public class TaskManagementStepDefinitions extends UIInteractionSteps {
     @Steps
-    LoginAction loginAction;
-    LoginVerify loginVerify;
-    taskAction taskAct;
-    taskVerify taskVer;
+    TaskAction taskAction;
+    TaskVerify taskVerify;
 
     @Given("Click on Task Management")
-    public void researchingThings() {
-
+    public void clickOnTaskManagement() {
+        taskAction.clickOnTaskManagement();
     }
 
-    @When("Enter account is {string} and password is {string}")
-    public void enterAccountAndPassword(String account, String password) {
-        loginAction.sendAccountAndPassWord(account, password);
+    @When("Click on button add")
+    public void clickOnButtonAdd(){
+        taskAction.clickOnButtonAdd();
     }
 
-    @And("Click button login")
-    public void clickButtonLogin() {
-        loginAction.clickButtonLogin();
+    @And("Click choose meeting")
+    public void clickChooseMeeting(){
+        taskAction.clickChooseMeeting();
     }
 
-    @Then("Verify home page")
-    public void verifyHomePage() {
-        loginVerify.verifyHomePage();
+    @And("Enter task name is {string}")
+    public void enterTaskName(String taskName){
+        taskAction.enterTaskName(taskName);
+    }
+
+    @And("Click choose priority")
+    public void clickChoosePriority(){
+        taskAction.clickChoosePriority();
+    }
+
+    @And("Click choose due date")
+    public void clickChooseDueDate(){
+        taskAction.clickChooseDueDate();
     }
 
     //Edit task management steps
     @Given("User search (.*?) to edit")
     public void userSearchSearchKeyToEdit(String search) {
-        taskAct.searchTask(search);
+        taskAction.searchTask(search);
     }
 
     @When("Click on edit button by search key (.*?)")
     public void clickOnEditButton(String search) {
-        taskAct.clickEditButton(search);
+        taskAction.clickEditButton(search);
     }
 
     @And("Edit information of task with priority (.*?)")
     public void editInformationOfTask(String priority) {
-        taskAct.selectPriority(priority);
-        taskVer.selectedValueShouldBeCorrect(priority);
+        taskAction.selectPriority(priority);
+        taskVerify.selectedValueShouldBeCorrect(priority);
     }
 
     @And("User click save button")
     public void userClickSaveButton() {
-        taskAct.submitEdit();
+        taskAction.submitEdit();
     }
 
     @Then("System shows success message (.*?)")
     public void systemShowsSuccessMessage(String message) {
-        taskVer.messageSuccessShouldBeDisplay();
-        taskVer.messageSuccessShouldContain(message);
+        taskVerify.messageSuccessShouldBeDisplay();
+        taskVerify.messageSuccessShouldContain(message);
     }
 
     @Then("Task details screen should be display")
     public void taskDetailsScreenShouldBeDisplay() {
-        taskVer.editFormShouldBeDisplay();
+        taskVerify.editFormShouldBeDisplay();
     }
 
     @Then("Search result should be contain (.*?)")
     public void searchResultShouldBeContainSearchKey(String search) {
-        taskVer.searchResultShouldContain(search);
+        taskVerify.searchResultShouldContain(search);
     }
 }
