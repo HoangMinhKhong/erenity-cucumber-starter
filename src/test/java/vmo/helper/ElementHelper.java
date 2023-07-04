@@ -4,15 +4,13 @@ package vmo.helper;
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.Select;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 public class ElementHelper extends UIInteractionSteps {
 
-    public static By getElementBy(String name, String tempXpath) {
+    public By getElementBy(String name, String tempXpath) {
         String actualXpath = tempXpath.replace("${name}", name);
         return By.xpath(actualXpath);
     }
@@ -84,4 +82,16 @@ public class ElementHelper extends UIInteractionSteps {
             present = false;
         return  present;
    }
+
+   public void selectRandomValue(By element){
+       Select dropdown = new Select(getDriver().findElement(element));
+       List<WebElement> options = dropdown.getOptions();
+       int randomIndex = new Random().nextInt(options.size());
+       dropdown.selectByIndex(randomIndex);
+   }
+
+    public void selectByLabel(By element, String label){
+        Select dropdown = new Select(getDriver().findElement(element));
+        dropdown.selectByVisibleText(label);
+    }
 }
