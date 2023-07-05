@@ -69,7 +69,7 @@ public class TaskAction extends UIInteractionSteps {
     }
 
     public void searchTask(String searchKey) {
-        elementHelper.delayInSeconds(15);
+        elementHelper.delayInSeconds(2);
 //        waitFor(ExpectedConditions.visibilityOf($(TaskElements.TXT_SEARCH)));
         WebElement element = $(TaskElements.TXT_SEARCH).getElement();
         if (element.isEnabled()) {

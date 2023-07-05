@@ -12,15 +12,12 @@ public class Login {
     NavigateTo navigateTo;
     LoginAction loginAction;
 
-//    @Before(order = 0, value = "@login")
+    @Before(order = 0, value = "@login")
     public void openBrowser() {
-//        if (!beforeFeature) {
-//            navigateTo.openBrowser();
-//            beforeFeature = true;
-//        }
-        navigateTo.openBrowser();
-        loginAction.sendAccountAndPassWord("superuser", "password");
-        loginAction.clickButtonLogin();
+        if (!beforeFeature) {
+            navigateTo.openBrowser();
+            beforeFeature = true;
+        }
     }
 
     public void loginSuccess() {

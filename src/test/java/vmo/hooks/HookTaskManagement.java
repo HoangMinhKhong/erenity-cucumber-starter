@@ -15,15 +15,13 @@ public class HookTaskManagement {
     @Steps
     Login login;
 
-    @Before(order = 0, value = "@taskManagement or @taskManagement2")
+    @Before()
     public void login() {
-//        if (!beforeFeature) {
-//            navigateTo.openBrowser();
-//            login.loginSuccess();
-//            beforeFeature = true;
-//        }
-        navigateTo.openBrowser();
-        login.loginSuccess();
+        if (!beforeFeature) {
+            navigateTo.openBrowser();
+            login.loginSuccess();
+            beforeFeature = true;
+        }
     }
 
     @After
