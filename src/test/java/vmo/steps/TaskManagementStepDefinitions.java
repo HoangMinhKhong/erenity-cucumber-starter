@@ -113,4 +113,14 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
     public void systemShowsSuccessMessage() {
         taskVerify.messageSuccessShouldBeDisplay();
     }
+
+    @Then("Verify that edit data success")
+    public void verifyThatEditDataSuccess() {
+        taskVerify.verifyEditSuccess("taskNameEdit");
+    }
+
+    @Then("Verify that delete data success")
+    public void verifyThatDeleteDataSuccess() {
+        taskVerify.verifyDeleteSuccess("delete");
+    }
 }

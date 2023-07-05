@@ -1,16 +1,21 @@
 package vmo.helper;
 
 
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
+import java.io.Console;
 import java.util.*;
 
 public class ElementHelper extends UIInteractionSteps {
+    private static final Logger LOGGER = LoggerFactory.getLogger(ElementHelper.class);
 
     public static By getElementBy(String name, String tempXpath) {
         String actualXpath = tempXpath.replace("${name}", name);
@@ -120,6 +125,13 @@ public class ElementHelper extends UIInteractionSteps {
             stringBuilder.append(randomChar);
         }
         return stringBuilder.toString();
+    }
+
+
+    public String getSession(String session) {
+        String value = Serenity.sessionVariableCalled(session);
+        LOGGER.info("Value session is : " + value);
+        return value;
     }
 }
 

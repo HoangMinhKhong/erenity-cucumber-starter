@@ -1,5 +1,6 @@
 package vmo.pages.taskmanagement;
 
+import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.steps.UIInteractionSteps;
@@ -33,7 +34,9 @@ public class TaskAction extends UIInteractionSteps {
 
     public void enterTaskName(String taskName) {
         elementHelper.clearText($(TaskElements.TASK_NAME));
-        $(TaskElements.TASK_NAME).sendKeys(taskName + elementHelper.randomString(5));
+        String rd = taskName + elementHelper.randomString(5);
+        Serenity.setSessionVariable("taskNameEdit").to(rd);
+        $(TaskElements.TASK_NAME).sendKeys(rd);
     }
 
     public void clickChoosePriority() {

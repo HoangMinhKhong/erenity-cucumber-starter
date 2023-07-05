@@ -16,6 +16,10 @@ public class NavigateTo {
         myECHomePage.open();
     }
 
+//    public void openBrowser(String url) {
+//        myECHomePage.openUrl(url);
+//    }
+
     @Step("Close browser")
     public void closeBrowser(){
         myECHomePage.getDriver().close();

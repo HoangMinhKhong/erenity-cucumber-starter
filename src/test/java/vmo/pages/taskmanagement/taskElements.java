@@ -39,8 +39,7 @@ public class TaskElements extends PageObject{
     public static By DELETE_TASK_POPUP = By.xpath("//div[@class='modal-confirm__title']");
     public static By DELETE_BTN(String search){
         String DELETE_BTN = "//div[text()='${name}']//ancestor::tr[@data-row-key]//button[2]";
-        By result = elementHelper.getElementBy(search, DELETE_BTN);
-        return result;
+        return elementHelper.getElementBy(search, DELETE_BTN);
     }
     public static By BTN_CONFIRM = By.xpath("//div[@class='ant-space-item']//button//span[text()='Confirm']");
     public static By EDIT_FORM = By.xpath("//div[@class='ant-modal-content']");
@@ -50,8 +49,7 @@ public class TaskElements extends PageObject{
     public static String SELECTED_VALUE = "//div[@name='priority']//span[@class='ant-select-selection-item' and @title='${name}']";
     public static By SELECTED_VALUE(String value){
         String SELECTED_VALUE = "//div[@name='priority']//span[@class='ant-select-selection-item' and @title='${name}']";
-        By result = elementHelper.getElementBy(value, SELECTED_VALUE);
-        return result;
+        return elementHelper.getElementBy(value, SELECTED_VALUE);
     }
     public static By DTP_DUE_DATE = By.xpath("//div[@class='ant-picker-input']");
     public static By IC_DELETE_DATE = By.xpath("//span[@class='anticon anticon-close-circle']");
@@ -64,4 +62,8 @@ public class TaskElements extends PageObject{
     public static By BTN_CANCEL = By.xpath("//button[@type='button']//div[text()='Cancel']");
     public static By BTN_SAVE = By.xpath("//button[@type='submit']");
     public static By MSG_SUCCESS = By.xpath("//div[@class='ant-message-notice-content']//span[last()]");
+
+    //delete
+    public static By TASK_NAME_SEARCH = By.xpath("(//tbody[@class='ant-table-tbody']//div[@class='underline'])[1]");
+
 }
