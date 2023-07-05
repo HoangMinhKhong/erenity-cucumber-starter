@@ -17,6 +17,7 @@ Feature: Task Management
 
 #    Then Verify new task management
 
+  @EditTaskManagement
   Scenario Outline: Edit Task Management
     When User search "<searchKey>" to edit
     And Search result should be contain "<searchKey>"
@@ -30,6 +31,7 @@ Feature: Task Management
       | searchKey | message                           |
       | MyEC      | Data has been saved successfully. |
 
+  @DeleteTaskManagement
   Scenario Outline: Delete Task Management
     When User search "<searchKey>" to edit
     And Search result should be contain "<searchKey>"
