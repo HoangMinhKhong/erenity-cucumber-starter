@@ -79,6 +79,7 @@ public class TaskAction extends UIInteractionSteps {
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.TXT_SEARCH)));
         WebElement element = $(TaskElements.TXT_SEARCH).getElement();
         if (element.isEnabled()) {
+            elementHelper.clearText($(TaskElements.TXT_SEARCH));
             $(TaskElements.TXT_SEARCH).sendKeys(searchKey);
             waitFor(ExpectedConditions.visibilityOf($(TaskElements.BTN_SEARCH)));
             $(TaskElements.BTN_SEARCH).click();

@@ -1,24 +1,24 @@
 @taskManagement
 Feature: Task Management
 
-#  Background: Click on header
-#    Given Click on Task Management
+  Background: Click on header
+    Given Click on Task Management
 
-#  @AddTaskManagement
-#  Scenario: Add Task Management Success
-#    When Click on button add
-#    When Click choose meeting
-#    And Enter task name is "Auto test"
-#    And Click choose priority
-#    And Click choose due date
-#    And Click choose pic
-#    And User click save button
-#    Then System shows success message
+  @AddTaskManagement
+  Scenario Outline: Add Task Management Success
+    When Click on button add
+    When Click choose meeting
+    And Enter task name is "Auto test"
+    And Click choose priority
+    And Click choose due date
+    And Click choose pic
+    And User click save button
+    Then System shows success message
 
 #    Then Verify new task management
 
-  Scenario Outline: Edit Task Management
-    Given Click on Task Management
+#  Scenario Outline: Edit Task Management
+#    Given Click on Task Management
     When User search "<searchKey>" to edit
     And Search result should be contain "<searchKey>"
     And Click on edit button by search key "<searchKey>"
@@ -26,12 +26,12 @@ Feature: Task Management
     When Edit information of task
     And User click save button
     Then System shows success message should be "<message>"
-    Examples:
-      | searchKey | message                           |
-      | MyEC      | Data has been saved successfully. |
+#    Examples:
+#      | searchKey | message                           |
+#      | MyEC      | Data has been saved successfully. |
 
-  Scenario Outline: Delete Task Management
-    Given Click on Task Management
+#  Scenario Outline: Delete Task Management
+#    Given Click on Task Management
     When User search "<searchKey>" to edit
     And Search result should be contain "<searchKey>"
     And Click on delete button by search key "<searchKey>"

@@ -39,6 +39,7 @@ public class TaskVerify extends UIInteractionSteps {
     }
 
     public void messageSuccessShouldBeDisplay() {
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.MSG_SUCCESS)));
         assertThat($(TaskElements.MSG_SUCCESS).isDisplayed());
     }
 

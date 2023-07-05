@@ -103,10 +103,14 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
         taskVerify.searchResultShouldContain(search);
     }
 
-    /// lần 2 vẫn chết ạ, lần 1 do lỗi verify thôi a
     @When("User click confirm delete task")
     public void userClickConfirmDeleteTask() {
         taskAction.clickConfirmDelete();
 
+    }
+
+    @Then("System shows success message")
+    public void systemShowsSuccessMessage() {
+        taskVerify.messageSuccessShouldBeDisplay();
     }
 }
