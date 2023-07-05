@@ -15,7 +15,8 @@ public class TaskAction extends UIInteractionSteps {
     ElementHelper elementHelper = new ElementHelper();
 
     public void clickOnTaskManagement() {
-        elementHelper.delayInSeconds(1);
+//        elementHelper.delayInSeconds(1);
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.TASK_MANAGEMENT)));
         $(TaskElements.TASK_MANAGEMENT).withTimeoutOf(Duration.ofSeconds(10)).click();
     }
 
@@ -24,7 +25,8 @@ public class TaskAction extends UIInteractionSteps {
     }
 
     public void clickChooseMeeting() {
-        elementHelper.delayInSeconds(1);
+//        elementHelper.delayInSeconds(1);
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.MEETING_SEARCH)));
         $(TaskElements.MEETING_SEARCH).click();
         $(TaskElements.MEETING_MYEC).click();
     }
@@ -40,7 +42,7 @@ public class TaskAction extends UIInteractionSteps {
     }
 
     public void removeOldDate(WebElementFacade webElementFacade) {
-        elementHelper.delayInSeconds(1);
+//        waitFor(ExpectedConditions.visibilityOf($(webElementFacade)));
         Actions actions = new Actions(getDriver());
         WebElement webElement = webElementFacade.getElement();
         actions.moveToElement(webElement).perform();
@@ -48,33 +50,37 @@ public class TaskAction extends UIInteractionSteps {
     }
 
     public void removeOldDateAndChooseNewDate() {
-        elementHelper.delayInSeconds(1);
+//        elementHelper.delayInSeconds(1);
+//        waitFor(ExpectedConditions.visibilityOf($(TaskElements.IC_DELETE_DATE)));
         removeOldDate($(TaskElements.IC_DELETE_DATE));
-        elementHelper.delayInSeconds(2);
+//        elementHelper.delayInSeconds(2);
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.DUE_DATA)));
         $(TaskElements.DUE_DATA).click();
         $(TaskElements.TODAY).click();
     }
 
     public void chooseNewDate() {
-        elementHelper.delayInSeconds(1);
+//        elementHelper.delayInSeconds(1);
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.DUE_DATA)));
         $(TaskElements.DUE_DATA).click();
-        elementHelper.delayInSeconds(1);
+//        elementHelper.delayInSeconds(1);
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.TODAY)));
         $(TaskElements.TODAY).click();
     }
 
     public void clickChoosePIC() {
         $(TaskElements.PIC).click();
-        elementHelper.delayInSeconds(1);
+//        elementHelper.delayInSeconds(1);
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.PIC_USER)));
         $(TaskElements.PIC_USER).click();
     }
 
     public void searchTask(String searchKey) {
-        elementHelper.delayInSeconds(2);
-//        waitFor(ExpectedConditions.visibilityOf($(TaskElements.TXT_SEARCH)));
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.TXT_SEARCH)));
         WebElement element = $(TaskElements.TXT_SEARCH).getElement();
         if (element.isEnabled()) {
             $(TaskElements.TXT_SEARCH).sendKeys(searchKey);
-            elementHelper.delayInSeconds(1);
+            waitFor(ExpectedConditions.visibilityOf($(TaskElements.BTN_SEARCH)));
             $(TaskElements.BTN_SEARCH).click();
         }
     }
@@ -109,7 +115,8 @@ public class TaskAction extends UIInteractionSteps {
     }
 
     public void selectPIC() {
-        elementHelper.delayInSeconds(2);
+//        elementHelper.delayInSeconds(2);
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.DDL_PIC)));
         $(TaskElements.DDL_PIC).click();
         $(TaskElements.REPORTER).click();
     }

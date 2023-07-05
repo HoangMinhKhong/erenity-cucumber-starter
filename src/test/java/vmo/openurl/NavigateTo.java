@@ -1,11 +1,18 @@
 package vmo.openurl;
 
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
+import net.serenitybdd.screenplay.actions.Open;
+import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.webdriver.CloseBrowser;
+import org.openqa.selenium.WebDriver;
 
 public class NavigateTo {
+
     MyECHomePage myECHomePage;
     @Step("Open browser")
-    public void openBrowser(){
+    public void openBrowser() {
         myECHomePage.open();
     }
 

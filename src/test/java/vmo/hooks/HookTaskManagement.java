@@ -17,11 +17,13 @@ public class HookTaskManagement {
 
     @Before()
     public void login() {
-        if (!beforeFeature) {
-            navigateTo.openBrowser();
-            login.loginSuccess();
-            beforeFeature = true;
-        }
+//        if (!beforeFeature) {
+//            navigateTo.openBrowser();
+//            login.loginSuccess();
+//            beforeFeature = true;
+//        }
+        navigateTo.openBrowser();
+        login.loginSuccess();
     }
 
     @After

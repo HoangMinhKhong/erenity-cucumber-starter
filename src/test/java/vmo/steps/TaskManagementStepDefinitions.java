@@ -51,12 +51,12 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
 
 
     //Edit task management steps
-    @Given("User search {string} to edit")
+    @When("User search {string} to edit")
     public void userSearchSearchKeyToEdit(String search) {
         taskAction.searchTask(search);
     }
 
-    @When("Click on edit button by search key {string}")
+    @And("Click on edit button by search key {string}")
     public void clickOnEditButton(String search) {
         taskAction.clickEditButton(search);
     }
@@ -66,7 +66,7 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
         taskAction.clickDeleteButton(search);
     }
 
-    @And("Edit information of task")
+    @When("Edit information of task")
     public void editInformationOfTask() {
         taskAction.enterTaskName("Automation demo");
 //        taskAction.selectPriority(priority);
@@ -98,12 +98,13 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
         taskVerify.deleteTaskShouldBeDisplay();
     }
 
-    @Then("Search result should be contain {string}")
+    @And("Search result should be contain {string}")
     public void searchResultShouldBeContainSearchKey(String search) {
         taskVerify.searchResultShouldContain(search);
     }
 
-    @And("User click confirm delete task")
+    /// lần 2 vẫn chết ạ, lần 1 do lỗi verify thôi a
+    @When("User click confirm delete task")
     public void userClickConfirmDeleteTask() {
         taskAction.clickConfirmDelete();
 

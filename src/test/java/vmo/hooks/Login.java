@@ -12,20 +12,23 @@ public class Login {
     NavigateTo navigateTo;
     LoginAction loginAction;
 
-    @Before(order = 0, value = "@login")
+//    @Before(order = 0, value = "@login")
     public void openBrowser() {
-        if (!beforeFeature) {
-            navigateTo.openBrowser();
-            beforeFeature = true;
-        }
+//        if (!beforeFeature) {
+//            navigateTo.openBrowser();
+//            beforeFeature = true;
+//        }
+        navigateTo.openBrowser();
     }
 
     public void loginSuccess() {
-        if (!beforeFeature) {
-            navigateTo.openBrowser();
-            loginAction.sendAccountAndPassWord("superuser", "password");
+//        if (!beforeFeature) {
+//            navigateTo.openBrowser();
+//            loginAction.sendAccountAndPassWord("superuser", "password");
+//            loginAction.clickButtonLogin();
+//            beforeFeature = true;
+//        }
+        loginAction.sendAccountAndPassWord("superuser", "password");
             loginAction.clickButtonLogin();
-            beforeFeature = true;
-        }
     }
 }

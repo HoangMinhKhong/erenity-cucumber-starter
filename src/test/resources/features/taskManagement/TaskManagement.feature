@@ -1,8 +1,8 @@
 @taskManagement
 Feature: Task Management
 
-  Background: Click on header
-    Given Click on Task Management
+#  Background: Click on header
+#    Given Click on Task Management
 
 #  @AddTaskManagement
 #  Scenario: Add Task Management Success
@@ -17,26 +17,26 @@ Feature: Task Management
 
 #    Then Verify new task management
 
-  @EditTaskManagement
   Scenario Outline: Edit Task Management
-    Given User search "<searchKey>" to edit
-    Then Search result should be contain "<searchKey>"
-    When Click on edit button by search key "<searchKey>"
+    Given Click on Task Management
+    When User search "<searchKey>" to edit
+    And Search result should be contain "<searchKey>"
+    And Click on edit button by search key "<searchKey>"
     Then Task details screen should be display
-    And Edit information of task
+    When Edit information of task
     And User click save button
     Then System shows success message should be "<message>"
     Examples:
       | searchKey | message                           |
       | MyEC      | Data has been saved successfully. |
 
-  @DeleteTask
   Scenario Outline: Delete Task Management
-    Given User search "<searchKey>" to edit
-    Then Search result should be contain "<searchKey>"
-    When Click on delete button by search key "<searchKey>"
+    Given Click on Task Management
+    When User search "<searchKey>" to edit
+    And Search result should be contain "<searchKey>"
+    And Click on delete button by search key "<searchKey>"
     Then Delete task popup should be display
-    And User click confirm delete task
+    When User click confirm delete task
     Then System shows success message should be "<message>"
     Examples:
       | searchKey | message                           |
