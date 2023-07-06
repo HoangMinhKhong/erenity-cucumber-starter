@@ -24,20 +24,22 @@ public class TaskElements extends PageObject{
     //common
     public static By TXT_SEARCH = By.xpath("//input[@placeholder='Search by PIC, Reporter, Meeting']");
     public static By BTN_SEARCH = By.xpath("//button//span[@class='anticon anticon-search']");
-    public static String SEARCH_RESULT = "//tbody[@class='ant-table-tbody']//td//div[text()='${name}']";
 
+    public static String SEARCH_RESULT = "(//tbody[@class='ant-table-tbody']//td//div[text()='${name}'])[1]";
     public static By SEARCH_RESULT(String search){
-        String SEARCH_RESULT = "(//tbody[@class='ant-table-tbody']//td//div[text()='${name}'])[1]";
-        By result = elementHelper.getElementBy(search, SEARCH_RESULT);
-        return result;
+        return elementHelper.getElementBy(search, SEARCH_RESULT);
     }
 
+//    public static String ACTION_BTN = "//div[text()='${name}']//ancestor::tr[@data-row-key]//button['${name}']";
+//    public static By ACTION_BTN(String value, String position){
+//        By first = elementHelper.getElementBy(value, ACTION_BTN);
+//        return elementHelper.getElementBy(position, first.toString());
+//    }
     //edit locators
     public static String EDIT_BTN = "//div[text()='${name}']//ancestor::tr[@data-row-key]//button[1]";
     public static By EDIT_BTN(String search){
         String EDIT_BTN = "//div[text()='${name}']//ancestor::tr[@data-row-key]//button[1]";
-        By result = elementHelper.getElementBy(search, EDIT_BTN);
-        return result;
+        return elementHelper.getElementBy(search, EDIT_BTN);
     }
     public static By DELETE_TASK_POPUP = By.xpath("//div[@class='modal-confirm__title']");
     public static By DELETE_BTN(String search){

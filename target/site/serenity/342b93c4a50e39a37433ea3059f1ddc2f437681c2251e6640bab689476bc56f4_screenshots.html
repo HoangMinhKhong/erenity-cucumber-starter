@@ -155,7 +155,7 @@
             <a href="576946480b52ad056d6f5bddf874399c83582ecf90963cc074a14c70580e7d9f.html"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 06-07-2023 10:49</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 06-07-2023 14:16</span>
     <br style="clear:left"/>
 </div>
 
@@ -223,9 +223,9 @@
                 <table class="outcome-header">
                     <tr>
                         <td colspan="2" class="test-title-bar">
-                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon fa-2x' title='SUCCESS'></i></a></span>
+                            <span class="outcome-icon"><a href='##beforetable'><i class='bi bi-exclamation-triangle-fill error-icon fa-2x' title='ERROR'></i></a></span>
                             <span class="test-case-title">
-                                <span class="success-color">Edit Task Management
+                                <span class="error-color">Edit Task Management
                                     <span class="related-issue-title"></span>
                                 </span>
                             </span>
@@ -246,28 +246,53 @@
 
     <div id="beforetable"></div>
     <div id="contenttilttle">
+            <div class="screenshotFailure panel panel-danger">
+    <div style="display:block">
+        <div class="table">
+            <div class="row">
+                <div class="col-sm-10" style="padding-left:1.5em; padding-top:0.5em; padding-bottom:0.5em;">
+                    <span class="error-message error-message-title">Invalid selector exception: invalid selector: Unable to locate an element with the xpath expression By.xpath: //div[text()='MyEC']//ancestor::tr[@data-row-key]//button['MyEC'] because of the following error:</span>
+                </div>
+                <div class="col-sm-2">
+                    <a class="btn btn-warning details-button" data-toggle="collapse" href="#stacktraceModal-overall"
+                       role="button" aria-expanded="false" aria-controls="multiCollapseExample1"><i class="bi bi-eye"></i> More details</a>
+                </div>
+             </div>
+        </div>
+    <div>
+
+    <!-- Details Section -->
+    <div class="row stacktrace-details">
+      <div class="col">
+        <div class="collapse multi-collapse" id="stacktraceModal-overall">
+            <div class="card">
+                <div class="card-header">
+                    <h4>org.openqa.selenium.InvalidSelectorException </h4>
+                </div>
+                <div class="card-body">
+                    <div>
+                        <pre>vmo.pages.taskmanagement.TaskAction.clickEditButton(TaskAction.java:89)<br />vmo.steps.TaskManagementStepDefinitions.clickOnEditButton(TaskManagementStepDefinitions.java:62)<br />✽.Click on edit button by search key "MyEC"(file:///F:/work_space/MyEC/serenity-cucumber/src/test/resources/features/taskManagement/TaskManagement.feature:23)<br /></pre>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+                    <div class="panel-body">
+                        <a href="pagesource4042696414903003954.html" target="_blank" class="btn btn-info">HTML Source</a>
+                    </div>
+            </div>
         <div class="slider-wrapper theme-default">
             <div id="slider">
-                <img src="780ed198f74d99b78d5a9634fe1cf1179b197684510809d7b487c3a4c10c39e3.png" title=" 1: Edit Task Management ({searchKey=MyEC, message=Data has been saved successfully.})" width="1920"/>
-                <img src="780ed198f74d99b78d5a9634fe1cf1179b197684510809d7b487c3a4c10c39e3.png" title=" Given Click on Task Management" width="1920"/>
-                <img src="4d763193c9c0e81b6a3500b5ca2d1c27b740211d3787eb1705b4d244a361a474.png" title=" Given Click on Task Management (completed)" width="1920"/>
-                <img src="4d763193c9c0e81b6a3500b5ca2d1c27b740211d3787eb1705b4d244a361a474.png" title=" When User search &quot;MyEC&quot; to edit" width="1920"/>
-                <img src="f8c2245fe765c32322169f335ad4eca9ac5ae92bae7d52396ea33f30e2492a81.png" title=" When User search &quot;MyEC&quot; to edit (completed)" width="1920"/>
-                <img src="f8c2245fe765c32322169f335ad4eca9ac5ae92bae7d52396ea33f30e2492a81.png" title=" And Search result should be contain &quot;MyEC&quot;" width="1920"/>
-                <img src="d663d6f18aff7239e1f48ad9b2234a5e0d4596a95523d8e495681c897ad0680a.png" title=" And Search result should be contain &quot;MyEC&quot; (completed)" width="1920"/>
-                <img src="d663d6f18aff7239e1f48ad9b2234a5e0d4596a95523d8e495681c897ad0680a.png" title=" And Click on edit button by search key &quot;MyEC&quot;" width="1920"/>
-                <img src="1092526b7b16cb3af9ec363c13e28908923c77c90255d964f71d33bdb1a7572b.png" title=" And Click on edit button by search key &quot;MyEC&quot; (completed)" width="1920"/>
-                <img src="1092526b7b16cb3af9ec363c13e28908923c77c90255d964f71d33bdb1a7572b.png" title=" Then Task details screen should be display" width="1920"/>
-                <img src="54e12d97756542ca4f12a4e26eb791699c1154d2b68055bda6e9fa347b537558.png" title=" Then Task details screen should be display (completed)" width="1920"/>
-                <img src="54e12d97756542ca4f12a4e26eb791699c1154d2b68055bda6e9fa347b537558.png" title=" When Edit information of task" width="1920"/>
-                <img src="7d4d34c46541d5468316646b185ec06ff4c99e1133cac24419420a9cd7d73874.png" title=" When Edit information of task (completed)" width="1920"/>
-                <img src="7d4d34c46541d5468316646b185ec06ff4c99e1133cac24419420a9cd7d73874.png" title=" And User click save button" width="1920"/>
-                <img src="c1cb6db696d84dba2535c2103ef777437345bb555748e058071586beba4a94b5.png" title=" And User click save button (completed)" width="1920"/>
-                <img src="c1cb6db696d84dba2535c2103ef777437345bb555748e058071586beba4a94b5.png" title=" Then System shows success message should be &quot;Data has been saved successfully.&quot;" width="1920"/>
-                <img src="5109712b575d5c0cfa84a307f5f2fcecb96dff9de082039e2c5ad749a917f17b.png" title=" Then System shows success message should be &quot;Data has been saved successfully.&quot; (completed)" width="1920"/>
-                <img src="5109712b575d5c0cfa84a307f5f2fcecb96dff9de082039e2c5ad749a917f17b.png" title=" Then Verify that edit data success" width="1920"/>
-                <img src="c1b945b64d61e7fcdac8877d6a6bf0a235f5d8922acf18161e8af34e9d10bf74.png" title=" Then Verify that edit data success (completed)" width="1920"/>
-                <img src="c1b945b64d61e7fcdac8877d6a6bf0a235f5d8922acf18161e8af34e9d10bf74.png" title=" 1: Edit Task Management ({searchKey=MyEC, message=Data has been saved successfully.}) (completed): <span class='success-color'>SUCCESS</span>" width="1920"/>
+                <img src="56356cbd28f96f1895cd77221b3bc6d3fa50d0bbf766751e427f38f6e9e036e7.png" title=" 1: Edit Task Management ({searchKey=MyEC, message=Data has been saved successfully.})" width="1920"/>
+                <img src="43df5f13150e8ca0eaafd46852eaef9afa4d261625ed8e693b14b1ea2e1f7391.png" title=" Given Click on Task Management" width="1920"/>
+                <img src="0d51d9b93fd8276a5e3ff5d2fb3821be09529263ceaf17734402dc39b6ce900e.png" title=" Given Click on Task Management (completed)" width="1920"/>
+                <img src="0d51d9b93fd8276a5e3ff5d2fb3821be09529263ceaf17734402dc39b6ce900e.png" title=" When User search &quot;MyEC&quot; to edit" width="1920"/>
+                <img src="979a63ce58458c0956a92b532cc38f6a4d6bb53be2be12f8a079d535488a3361.png" title=" When User search &quot;MyEC&quot; to edit (completed)" width="1920"/>
+                <img src="979a63ce58458c0956a92b532cc38f6a4d6bb53be2be12f8a079d535488a3361.png" title=" And Search result should be contain &quot;MyEC&quot;" width="1920"/>
+                <img src="59cf7f5bc8ee6fd366d0c49d577cfabab44e118731c07981463ddeabea901bd4.png" title=" And Search result should be contain &quot;MyEC&quot; (completed)" width="1920"/>
+                <img src="59cf7f5bc8ee6fd366d0c49d577cfabab44e118731c07981463ddeabea901bd4.png" title=" And Click on edit button by search key &quot;MyEC&quot;" width="1920"/>
+                <img src="aa71938e7cad0721e9a50fe2123dfd85a8d7e9d8d39849d0ad03ceb1841d7768.png" title=" Click edit button: MyEC: <span class='error-color'>ERROR</span>" width="1920"/>
             </div>
         </div>
 

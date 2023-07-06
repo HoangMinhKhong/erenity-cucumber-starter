@@ -30,14 +30,14 @@ Feature: Task Management
       | searchKey | message                           |
       | MyEC      | Data has been saved successfully. |
 
-#  Scenario Outline: Delete Task Management
-#    When User search "<searchKey>" to edit
-#    And Search result should be contain "<searchKey>"
-#    And Click on delete button by search key "<searchKey>"
-#    Then Delete task popup should be display
-#    When User click confirm delete task
-#    Then System shows success message should be "<message>"
-#    Then Verify that delete data success
-#    Examples:
-#      | searchKey | message              |
-#      | MyEC      | Delete successfully! |
+  Scenario Outline: Delete Task Management
+    When User search "<searchKey>" to edit
+    And Search result should be contain "<searchKey>"
+    And Click on delete button by search key "<searchKey>"
+    Then Delete task popup should be display
+    When User click confirm delete task
+    Then System shows success message should be "<message>"
+    Then Verify that delete data success
+    Examples:
+      | searchKey | message              |
+      | MyEC      | Delete successfully! |

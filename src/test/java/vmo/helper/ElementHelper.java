@@ -18,7 +18,7 @@ import java.util.*;
 public class ElementHelper extends UIInteractionSteps {
     private static final Logger LOGGER = LoggerFactory.getLogger(ElementHelper.class);
 
-    public static By getElementBy(String name, String tempXpath) {
+    public By getElementBy(String name, String tempXpath) {
         String actualXpath = tempXpath.replace("${name}", name);
         return By.xpath(actualXpath);
     }
