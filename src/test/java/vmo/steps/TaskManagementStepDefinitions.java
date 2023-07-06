@@ -47,6 +47,7 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
     @And("Click choose pic")
     public void clickChoosePic(){
         taskAction.clickChoosePIC();
+        taskVerify.picShouldBeCorrect("pic");
     }
 
 
@@ -73,6 +74,7 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
 //        taskVerify.selectedValueShouldBeCorrect(priority);
         taskAction.removeOldDateAndChooseNewDate();
         taskAction.selectPIC();
+        taskVerify.picShouldBeCorrect("pic");
 //        taskAction.selectRandomReporter();
         taskAction.inputNote("This is message for demo automation. Thank you!");
     }

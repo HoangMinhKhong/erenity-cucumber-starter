@@ -1,16 +1,15 @@
 package vmo.pages.taskmanagement;
 
 import net.serenitybdd.core.Serenity;
-import net.serenitybdd.core.pages.PageObject;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.steps.UIInteractionSteps;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import vmo.helper.ElementHelper;
 
 import java.time.Duration;
+import java.util.List;
 
 public class TaskAction extends UIInteractionSteps {
     ElementHelper elementHelper = new ElementHelper();
@@ -54,11 +53,10 @@ public class TaskAction extends UIInteractionSteps {
 
     public void removeOldDateAndChooseNewDate() {
 //        elementHelper.delayInSeconds(1);
-//        waitFor(ExpectedConditions.visibilityOf($(TaskElements.IC_DELETE_DATE)));
         removeOldDate($(TaskElements.IC_DELETE_DATE));
-//        elementHelper.delayInSeconds(2);
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.DUE_DATA)));
         $(TaskElements.DUE_DATA).click();
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.TODAY)));
         $(TaskElements.TODAY).click();
     }
 
@@ -72,10 +70,14 @@ public class TaskAction extends UIInteractionSteps {
     }
 
     public void clickChoosePIC() {
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.PIC)));
         $(TaskElements.PIC).click();
-//        elementHelper.delayInSeconds(1);
-        waitFor(ExpectedConditions.visibilityOf($(TaskElements.PIC_USER)));
-        $(TaskElements.PIC_USER).click();
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.LIST_PIC_ADD)));
+        //get list
+        List<WebElement> value = elementHelper.getListElement(TaskElements.LIST_PIC_ADD);
+        String pic = value.get(0).getText().trim();
+        Serenity.setSessionVariable("pic").to(pic);
+        elementHelper.clickByJS(value.get(0));
     }
 
     public void searchTask(String searchKey) {
@@ -122,7 +124,12 @@ public class TaskAction extends UIInteractionSteps {
 //        elementHelper.delayInSeconds(2);
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.DDL_PIC)));
         $(TaskElements.DDL_PIC).click();
-        $(TaskElements.REPORTER).click();
+        waitFor(ExpectedConditions.visibilityOf($(TaskElements.PIC_LIST)));
+        //get list
+        List<WebElement> list = elementHelper.getListElement(TaskElements.PIC_LIST);
+        String pic = list.get(1).getText().trim();
+        Serenity.setSessionVariable("pic").to(pic);
+        list.get(1).click();
     }
 
     public void inputNote(String note) {

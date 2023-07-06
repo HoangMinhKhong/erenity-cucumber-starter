@@ -60,4 +60,9 @@ public class TaskVerify extends UIInteractionSteps {
         String afterDelete = elementHelper.getSession(session);
         assertThat($(TaskElements.SEARCH_RESULT(afterDelete)).shouldNotBeVisible());
     }
+
+    public void picShouldBeCorrect(String session){
+        String pic = elementHelper.getSession(session);
+        assertThat($(TaskElements.SELECTED_PIC).getText().trim()).isEqualTo(pic);
+    }
 }

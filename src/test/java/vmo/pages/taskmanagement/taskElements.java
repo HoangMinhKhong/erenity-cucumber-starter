@@ -17,6 +17,9 @@ public class TaskElements extends PageObject{
     public static By TODAY = By.xpath("//div[@class='ant-picker-footer']//a");
     public static By PIC = By.xpath("//div[@name='pic']");
     public static By PIC_USER = By.xpath("//div[@class='ant-select-item-option-content' and contains(text(), 'user 7')]");
+    public static By LIST_PIC_ADD = By.xpath("//div[@id='rc_select_4_list']//ancestor::div//div[@class='rc-virtual-list-holder-inner']//div[@label]");
+    public static By SELECTED_PIC = By.xpath("//div[@name='pic']//span[@class='ant-select-selection-item']");
+    public static By PIC_LIST = By.xpath("//div[contains(@class,'ant-select-dropdown-placement-bottomLeft')]//div[@class='rc-virtual-list-holder-inner']//div[@label]");
 
     //common
     public static By TXT_SEARCH = By.xpath("//input[@placeholder='Search by PIC, Reporter, Meeting']");

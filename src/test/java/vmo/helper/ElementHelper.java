@@ -5,6 +5,7 @@ import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.Select;
@@ -133,5 +134,10 @@ public class ElementHelper extends UIInteractionSteps {
         LOGGER.info("Value session is : " + value);
         return value;
     }
+
+    public void clickByJS(WebElement webElement){
+        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", webElement);
+    }
+
 }
 
