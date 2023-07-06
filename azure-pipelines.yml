@@ -11,6 +11,7 @@ pool:
 
 steps:
 - task: Maven@3
+  displayName: 'Maven pom.xml'
   inputs:
     mavenPomFile: 'pom.xml'
     mavenOptions: '-Xmx3072m'
@@ -19,4 +20,4 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'package'
+    goals: 'clean verify -Denvironment=test -Dtags=taskManagement'
