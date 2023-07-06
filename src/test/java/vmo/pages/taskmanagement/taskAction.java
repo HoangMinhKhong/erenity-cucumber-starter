@@ -121,7 +121,6 @@ public class TaskAction extends UIInteractionSteps {
     }
 
     public void selectPIC() {
-//        elementHelper.delayInSeconds(2);
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.DDL_PIC)));
         $(TaskElements.DDL_PIC).click();
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.PIC_LIST)));
