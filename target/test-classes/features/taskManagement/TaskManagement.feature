@@ -18,7 +18,7 @@ Feature: Task Management
 #    Then Verify new task management
   @EditTaskManagement
   Scenario Outline: Edit Task Management
-    When User search "<searchKey>" to edit
+    When User search <searchKey> to edit
     And Search result should be contain "<searchKey>"
     And Click on edit button by search key "<searchKey>"
     Then Task details screen should be display
@@ -31,7 +31,7 @@ Feature: Task Management
       | MyEC      | Data has been saved successfully. |
 
   Scenario Outline: Delete Task Management
-    When User search "<searchKey>" to edit
+    When User search <searchKey> to delete
     And Search result should be contain "<searchKey>"
     And Click on delete button by search key "<searchKey>"
     Then Delete task popup should be display

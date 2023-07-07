@@ -20,39 +20,39 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
     }
 
     @When("Click on button add")
-    public void clickOnButtonAdd(){
+    public void clickOnButtonAdd() {
         taskAction.clickOnButtonAdd();
     }
 
     @And("Click choose meeting")
-    public void clickChooseMeeting(){
+    public void clickChooseMeeting() {
         taskAction.clickChooseMeeting();
     }
 
     @And("Enter task name is {string}")
-    public void enterTaskName(String taskName){
+    public void enterTaskName(String taskName) {
         taskAction.enterTaskName(taskName);
     }
 
     @And("Click choose priority")
-    public void clickChoosePriority(){
+    public void clickChoosePriority() {
         taskAction.clickChoosePriority();
     }
 
     @And("Click choose due date")
-    public void clickChooseDueDate(){
+    public void clickChooseDueDate() {
         taskAction.chooseNewDate();
     }
 
     @And("Click choose pic")
-    public void clickChoosePic(){
+    public void clickChoosePic() {
         taskAction.clickChoosePIC();
         taskVerify.picShouldBeCorrect("pic");
     }
 
 
     //Edit task management steps
-    @When("User search {string} to edit")
+    @When("User search {} to edit/delete")
     public void userSearchSearchKeyToEdit(String search) {
         taskAction.searchTask(search);
     }
