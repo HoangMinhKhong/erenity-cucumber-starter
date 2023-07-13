@@ -8,15 +8,15 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.Select;
 import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
-import java.io.Console;
+import java.text.MessageFormat;
 import java.util.*;
 
 public class ElementHelper extends UIInteractionSteps {
-    private static final Logger LOGGER = LoggerFactory.getLogger(ElementHelper.class);
+    private static final Logger logger = LogHelper.getLogger();
 
     public By getElementBy(String name, String tempXpath) {
         String actualXpath = tempXpath.replace("${name}", name);
@@ -131,13 +131,80 @@ public class ElementHelper extends UIInteractionSteps {
 
     public String getSession(String session) {
         String value = Serenity.sessionVariableCalled(session);
-        LOGGER.info("Value session is : " + value);
+        logger.info("Value session is : " + value);
         return value;
     }
 
-    public void clickByJS(WebElement webElement){
-        ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", webElement);
+    public void clickByJS(WebElement webElement) {
+        try {
+            logger.debug(MessageFormat.format("Click on web element {0}", webElement));
+            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", webElement);
+            logger.info("Already click on element");
+        } catch (Exception e) {
+            logger.error(MessageFormat.format("Cannot click element because {0}", e.getMessage()));
+        }
     }
 
+    public void switchToNewOpenBrowser() {
+        try {
+            for (String winHandle : getDriver().getWindowHandles()) {
+                logger.debug(MessageFormat.format("Switching to browser {0}", winHandle));
+                getDriver().switchTo().window(winHandle);
+                logger.info(MessageFormat.format("Switched to browser {0}", winHandle));
+            }
+        } catch (Exception e) {
+            logger.error(MessageFormat.format("Cannot switch to browser because {0}", e.getMessage()));
+        }
+    }
+
+    public String getTextJS(By element) {
+        String text = "";
+        try {
+            logger.debug("Get text from element");
+            WebElement webElement = getDriver().findElement(element);
+            highlightElement(element);
+            text = (String) ((JavascriptExecutor) getDriver()).executeScript("return arguments[0].innerText;", webElement);
+            logger.info("Already get text from element");
+            return text;
+        } catch (Exception e) {
+            logger.error(MessageFormat.format("Cannot get text because of {0}", e.getMessage()));
+        }
+        return null;
+    }
+
+    public void highlightElement(By locator) {
+        try {
+            WebElement webElement = getDriver().findElement(locator);
+            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].style.border='4px solid red'", webElement);
+        } catch (Exception e) {
+            logger.error(MessageFormat.format("Cannot highlight element because {0}", e.getMessage()));
+        }
+    }
+
+    public void rightClick(By locator) {
+        try {
+            highlightElement(locator);
+            logger.debug("Right click on element...");
+            Actions actions = new Actions(getDriver());
+            WebElement webElement = getDriver().findElement(locator);
+            actions.contextClick(webElement).perform();
+            logger.info("Already right lick on element");
+        } catch (Exception e) {
+            logger.error(MessageFormat.format("Cannot perform right click on element because {0}", e.getMessage()));
+        }
+    }
+
+    public void doubleClick(By locator) {
+        try {
+            highlightElement(locator);
+            logger.debug("Double click on element...");
+            Actions actions = new Actions(getDriver());
+            WebElement webElement = getDriver().findElement(locator);
+            actions.doubleClick(webElement).perform();
+            logger.info("Already double lick on element");
+        } catch (Exception e) {
+            logger.error(MessageFormat.format("Cannot perform double click on element because {0}", e.getMessage()));
+        }
+    }
 }
 

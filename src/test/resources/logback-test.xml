@@ -8,10 +8,16 @@
     </appender>
 
     <logger name="root" level="DEBUG"/>
+    <logger name="root" level="INFO"/>
+    <logger name="net.serenitybdd" level="DEBUG"/>
+    <logger name="net.thucydides" level="DEBUG"/>
     <logger name="net.serenitybdd" level="INFO"/>
     <logger name="net.thucydides" level="INFO"/>
 
     <root level="INFO">
+        <appender-ref ref="STDOUT"/>
+    </root>
+    <root level="DEBUG">
         <appender-ref ref="STDOUT"/>
     </root>
 

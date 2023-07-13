@@ -154,7 +154,7 @@
             $("#requirements-tabs").tabs();
             $("#test-tabs").tabs();
 
-            var requirementsTree = [{"text":"Task Management","type":"feature","href":"c9f3f30bd1aa6d3165982b6afe8f11a8f42e5d9cbf138a0ee65827182ed0bfb1.html","nodes":[],"selectable":false,"tags":["\u003ca href\u003d\u0027##beforetable\u0027\u003e\u003ci class\u003d\u0027bi bi-hourglass-top pending-icon \u0027 title\u003d\u0027PENDING\u0027\u003e\u003c/i\u003e\u003c/a\u003e","\u003cspan class\u003d\u0027feature-count\u0027\u003e3 scenarios\u003c/span\u003e"]}];
+            var requirementsTree = [];
 
             $('#tree').treeview({
                 data: requirementsTree,
@@ -201,7 +201,6 @@
             <span class="breadcrumbs">
             <a href='index.html'>Home</a> > <a href="capabilities.html">Requirements</a>
 
-                > <a href="bc09a04d54bbebf08750efc223b992edd7288314ae1350ba13aba3911f4c316d.html">Task Management</a>
 
 
                     > <span class="truncate-40">Task Management</span>
@@ -229,7 +228,7 @@
             <a href="#"><i class="bi bi-chat-text"></i> Features</a>
         </li>
     </ul>
-    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated 07-07-2023 16:39</span>
+    <span class="date-and-time"><a href="build-info.html"><i class="bi bi-info-circle"></i></a> Report generated </span>
     <br style="clear:left"/>
 </div>
 
@@ -244,22 +243,11 @@
                         <div clas="table">
                             <div class="row">
 
-                                <div class="col-sm-8">
+                                    <div class="col-sm-12">
                                         <span>
                                             <h2><i class="bi bi-book"></i> Feature: Task Management</h2>
                                         </span>
                                     </div>
-                                        <div class="col-sm-4">
-                                        <span class="feature-tags">
-                                            <p class="tag">
-                                                <span class="badge feature-tag tag-badge" style="background:default;">
-                                                        <i class="bi bi-tag-fill"></i>&nbsp;<a class="tagLink"
-                                                                                               style="background:default;"
-                                                                                               href="e771e2d4db7bf4a3f06fd186e7d1b6840b0c474413b0564d9f88990a0e576092.html">taskManagement (tag)</a>
-                                                    </span>
-                                            </p>
-                                        </span>
-                                        </div>
                                 </div>
                             </div>
                         </div>
@@ -294,269 +282,84 @@
                                                 <h3>Feature Coverage By Scenario</h3>
 
                                                 <!-- REQUIREMENTS PIE CHART -->
-                                                    <div class="chart-container" style="position: relative; width:30vw">
-                                                        <canvas id="requirementChart" width="300" height="300"></canvas>
-                                                    </div>
 
                                             </div>
                                             <div class="col-sm-8">
-                                                <!--- TOC --->
-                                                <div id="toc">
-                                                    <h3>Overview</h3>
-                                                    <table class="table" id="toc-table">
-                                                                    <tr>
-                                                                        <td style="width:95%;" class="toc-title">
-                                                                            <span class="orphan-scenario-toc-entry">
-                                                                                    <a href="#1d9eebf18f9fc4d2903910875ff661a0f130d70ee489ad88d3da9b1ec99765a8"
-                                                                                       title="View scenario details">
-                                                                                        <i class="bi bi-chat-dots"></i> Scenario: Add Task Management Success
-                                                                                    </a>
-                                                                                </span>
-                                                                        </td>
-                                                                        <td>
+                                                <h3>Requirements Overview</h3>
 
-                                                                        </td>
-                                                                        <td style="width:5%;">
-                                                                            <table>
-                                                                                <tr>
-                                                                                    <td class="icons-bar">
-                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
-                                                                                           href="19dd89948d23f074278e238d5778848be725542989626e30dd94028f0fc18f5c.html"
-                                                                                           title="View test results">
-                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
-                                                                                            </a>
+                                                <div id="tree"></div>
 
+                                                <!-- STATS -->
+    <div>
+        <h3><i class="bi bi-speedometer2"></i> Key Statistics</h3>
+        <div>
+            <table class="table table-striped table-hover">
+                <tbody>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-card-checklist"></i> Number of Scenarios
+                    </td>
+                    <td>0</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-caret-right"></i> Total Number of Test Cases
+                    </td>
+                    <td>0</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-flag-fill"></i> Tests Started
+                    </td>
+                    <td></td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stop-circle"></i> Tests
+                        Finished
+                    </td>
+                    <td></td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Total
+                        Duration
+                    </td>
+                    <td>0ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-trophy"></i> Fastest Test
+                    </td>
+                    <td>0ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-skip-start"></i> Slowest
+                        Test
+                    </td>
+                    <td>0ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch"></i> Average
+                        Execution Time
+                    </td>
+                    <td>0ms</td>
+                </tr>
+                <tr scope="row">
+                    <td>
+                        <i class="bi bi-stopwatch-fill"></i> Total
+                        Execution Time
+                    </td>
+                    <td>0ms</td>
+                </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+                                                <!-- END STATS -->
 
-                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
-                                                                                               href="19dd89948d23f074278e238d5778848be725542989626e30dd94028f0fc18f5c.html"
-                                                                                               title="View test results">
-                                                                                                <i class="bi bi-eyeglasses"></i>
-                                                                                            </a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td style="width:95%;" class="toc-title">
-                                                                            <span class="orphan-scenario-toc-entry">
-                                                                                    <a href="#6e7cd0ce1258f62d05882a157b740253b8cf65e743b3ce29ee7b25f0c78e7eb6"
-                                                                                       title="View scenario details">
-                                                                                        <i class="bi bi-chat-dots"></i> Scenario Outline: Edit Task Management
-                                                                                    </a>
-                                                                                        (1 example)
-                                                                                </span>
-                                                                        </td>
-                                                                        <td>
-
-                                                                        </td>
-                                                                        <td style="width:5%;">
-                                                                            <table>
-                                                                                <tr>
-                                                                                    <td class="icons-bar">
-                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
-                                                                                           href="342b93c4a50e39a37433ea3059f1ddc2f437681c2251e6640bab689476bc56f4.html"
-                                                                                           title="View test results">
-                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
-                                                                                            </a>
-
-
-                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
-                                                                                               href="342b93c4a50e39a37433ea3059f1ddc2f437681c2251e6640bab689476bc56f4.html"
-                                                                                               title="View test results">
-                                                                                                <i class="bi bi-eyeglasses"></i>
-                                                                                            </a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr>
-                                                                        <td style="width:95%;" class="toc-title">
-                                                                            <span class="orphan-scenario-toc-entry">
-                                                                                    <a href="#ae82a5d2a8df6fa25e2d3776f445741f9151a8155a30d5cacc4f24df934d6173"
-                                                                                       title="View scenario details">
-                                                                                        <i class="bi bi-chat-dots"></i> Scenario Outline: Delete Task Management
-                                                                                    </a>
-                                                                                        (1 example)
-                                                                                </span>
-                                                                        </td>
-                                                                        <td>
-
-                                                                        </td>
-                                                                        <td style="width:5%;">
-                                                                            <table>
-                                                                                <tr>
-                                                                                    <td class="icons-bar">
-                                                                                        <a style="margin-left:0.5em;padding-right: 1.5em;"
-                                                                                           href="ec752acc4c2502ab7d10b260b8a31275b453dc54b261cd091afa7e25dbc925a4.html"
-                                                                                           title="View test results">
-                                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
-                                                                                            </a>
-
-
-                                                                                            <a style="margin-left:0.5em;padding-right: 1.5em;"
-                                                                                               href="ec752acc4c2502ab7d10b260b8a31275b453dc54b261cd091afa7e25dbc925a4.html"
-                                                                                               title="View test results">
-                                                                                                <i class="bi bi-eyeglasses"></i>
-                                                                                            </a>
-                                                                                    </td>
-                                                                                </tr>
-                                                                            </table>
-                                                                        </td>
-                                                                    </tr>
-                                                    </table>
-                                                </div>
-                                                <!--- END OF TOC --->
-                                            </div>
-                                        </div>
-                                        <div class="row">
-                                            <div class="col-sm-12">
-                                                <h3>Scenarios</h3>
-
-                                                    <a name="fdc5b01d-9e6c-434b-a161-3f621ce6ed9a"></a>
-                                                    <p class="rule-tags inline-tag">
-                                                    </p>
-
-
-                                                        <div class="scenario-docs card" id="1d9eebf18f9fc4d2903910875ff661a0f130d70ee489ad88d3da9b1ec99765a8">
-                                                            <div class="scenario-docs card-header success"
-                                                                 style="min-height:1.5em;">
-                                                                <div>
-                                                                        <span class="scenario-heading">
-                                                                            <a href="19dd89948d23f074278e238d5778848be725542989626e30dd94028f0fc18f5c.html"
-                                                                               title="View test results">Scenario: Add Task Management Success</a>
-                                                                        </span>
-
-                                                                        <span class="example-tags inline-tag">
-                                                                                <span class="badge tag-badge"
-                                                                                      style="background:default;">
-                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
-                                                                                    <a class="tagLink"
-                                                                                       style="background:default;"
-                                                                                       href="3869f26f7edc626225d905c3181813148003b378600cbe062c2a9c5d7cd2d309.html">AddTaskManagement (tag)</a>
-                                                                                </span>
-                                                                        </span>
-
-                                                                    <span class="scenario-result-icon">
-                                                                    
-
-                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
-                                                                        </span>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="scenario-docs card-body">
-                                                                    <p>When Click on button add</p>
-                                                                    <p>When Click choose meeting</p>
-                                                                    <p>And Enter task name is &quot;Auto test&quot;</p>
-                                                                    <p>And Click choose priority</p>
-                                                                    <p>And Click choose due date</p>
-                                                                    <p>And Click choose pic</p>
-                                                                    <p>And User click save button</p>
-                                                                    <p>Then System shows success message</p>
-                                                                <div class="examples">
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="scenario-docs card" id="6e7cd0ce1258f62d05882a157b740253b8cf65e743b3ce29ee7b25f0c78e7eb6">
-                                                            <div class="scenario-docs card-header success"
-                                                                 style="min-height:1.5em;">
-                                                                <div>
-                                                                        <span class="scenario-heading">
-                                                                            <a href="342b93c4a50e39a37433ea3059f1ddc2f437681c2251e6640bab689476bc56f4.html"
-                                                                               title="View test results">Scenario Outline: Edit Task Management</a>
-                                                                        </span>
-
-                                                                        <span class="example-tags inline-tag">
-                                                                                <span class="badge tag-badge"
-                                                                                      style="background:default;">
-                                                                                    <i class="bi bi-tag-fill"></i>&nbsp;
-                                                                                    <a class="tagLink"
-                                                                                       style="background:default;"
-                                                                                       href="0f0c284d29a9ece3e890919ccd8b6cad93aec7d3e64d5cb17a28a33d203e04b1.html">EditTaskManagement (tag)</a>
-                                                                                </span>
-                                                                        </span>
-
-                                                                    <span class="scenario-result-icon">
-                                                                    
-
-                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
-                                                                        </span>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="scenario-docs card-body">
-                                                                    <p>When User search {searchKey} to edit</p>
-                                                                    <p>And Search result should be contain &quot;{searchKey}&quot;</p>
-                                                                    <p>And Click on edit button by search key &quot;{searchKey}&quot;</p>
-                                                                    <p>Then Task details screen should be display</p>
-                                                                    <p>When Edit information of task</p>
-                                                                    <p>And User click save button</p>
-                                                                    <p>Then System shows success message should be &quot;{message}&quot;</p>
-                                                                    <p>Then Verify that edit data success</p>
-                                                                <div class="examples">
-                                                                        <p><p>Examples:</p>
-<blockquote>
-</blockquote>
-<div class='example-table-in-scenario'><table>
-<thead>
-<tr><th>searchKey</th><th>message</th><th> </th></tr>
-</thead>
-<tbody>
-<tr><td>MyEC</td><td>Data has been saved successfully.</td><td><a href='342b93c4a50e39a37433ea3059f1ddc2f437681c2251e6640bab689476bc56f4.html#beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a></td></tr>
-</tbody>
-</table></div>
-</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
-
-                                                        <div class="scenario-docs card" id="ae82a5d2a8df6fa25e2d3776f445741f9151a8155a30d5cacc4f24df934d6173">
-                                                            <div class="scenario-docs card-header success"
-                                                                 style="min-height:1.5em;">
-                                                                <div>
-                                                                        <span class="scenario-heading">
-                                                                            <a href="ec752acc4c2502ab7d10b260b8a31275b453dc54b261cd091afa7e25dbc925a4.html"
-                                                                               title="View test results">Scenario Outline: Delete Task Management</a>
-                                                                        </span>
-
-                                                                        <span class="example-tags inline-tag">
-                                                                        </span>
-
-                                                                    <span class="scenario-result-icon">
-                                                                    
-
-                                                                            <a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a>
-                                                                        </span>
-                                                                </div>
-
-                                                            </div>
-                                                            <div class="scenario-docs card-body">
-                                                                    <p>When User search {searchKey} to delete</p>
-                                                                    <p>And Search result should be contain &quot;{searchKey}&quot;</p>
-                                                                    <p>And Click on delete button by search key &quot;{searchKey}&quot;</p>
-                                                                    <p>Then Delete task popup should be display</p>
-                                                                    <p>When User click confirm delete task</p>
-                                                                    <p>Then System shows success message should be &quot;{message}&quot;</p>
-                                                                    <p>Then Verify that delete data success</p>
-                                                                <div class="examples">
-                                                                        <p><p>Examples:</p>
-<blockquote>
-</blockquote>
-<div class='example-table-in-scenario'><table>
-<thead>
-<tr><th>searchKey</th><th>message</th><th> </th></tr>
-</thead>
-<tbody>
-<tr><td>MyEC</td><td>Delete successfully!</td><td><a href='ec752acc4c2502ab7d10b260b8a31275b453dc54b261cd091afa7e25dbc925a4.html#beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a></td></tr>
-</tbody>
-</table></div>
-</p>
-                                                                </div>
-                                                            </div>
-                                                        </div>
                                             </div>
                                         </div>
                                     </div>
@@ -568,9 +371,6 @@
                                             <div class="col-sm-4">
                                                 <h3>Feature Coverage By Scenario</h3>
                                                 <!-- TEST RESULT PIE CHART -->
-                                                    <div class="chart-container" style="position: relative; width:30vw">
-                                                        <canvas id="resultChart" width="300" height="300"></canvas>
-                                                    </div>
                                             </div>
                                             <div class="col-sm-4">
                                                 <h4><i class="bi bi-check-square"></i> Test Outcomes</h4>
@@ -602,22 +402,22 @@
                     <td>
                         <i class="bi bi-card-checklist"></i> Number of Scenarios
                     </td>
-                    <td>3</td>
+                    <td>0</td>
                     <td>
                         <i class="bi bi-stopwatch"></i> Total
                         Duration
                     </td>
-                    <td>27s</td>
+                    <td>0ms</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-caret-right"></i> Total Number of Test Cases
                     </td>
-                    <td>3</td>
+                    <td>0</td>
                     <td>
                         <i class="bi bi-trophy"></i> Fastest Test
                     </td>
-                    <td>7s</td>
+                    <td>0ms</td>
                 </tr>
                 <tr scope="row">
                     <td>
@@ -628,30 +428,30 @@
                         <i class="bi bi-skip-start"></i> Slowest
                         Test
                     </td>
-                    <td>10s</td>
+                    <td>0ms</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-flag-fill"></i> Tests Started
                     </td>
-                    <td>Jul 07, 2023 16:39:13</td>
+                    <td></td>
                     <td>
                         <i class="bi bi-stopwatch"></i> Average
                         Execution Time
                     </td>
-                    <td>9s</td>
+                    <td>0ms</td>
                 </tr>
                 <tr scope="row">
                     <td>
                         <i class="bi bi-stop-circle"></i> Tests
                         Finished
                     </td>
-                    <td>Jul 07, 2023 16:39:41</td>
+                    <td></td>
                     <td>
                         <i class="bi bi-stopwatch-fill"></i> Total
                         Execution Time
                     </td>
-                    <td>27s</td>
+                    <td>0ms</td>
                 </tr>
                 </tbody>
             </table>
@@ -660,72 +460,7 @@
 
                                                 <h3><i class="bi bi-gear"></i> Automated Tests</h3>
 
-                                                    <table class="scenario-result-table table" id="scenario-results">
-                                                        <thead>
-                                                        <tr>
-                                                            <th>feature</th>
-                                                            <th class="test-name-column">Scenario</th>
-                                                            <th>Context</th>
-                                                            <th>Steps</th>
-                                                            <th>Started</th>
-                                                            <th>Total Duration</th>
-                                                            <th>Result</th>
-                                                        </tr>
-                                                        </thead>
-                                                        <tbody>
-                                                                <tr class="scenario-result SUCCESS">
-                                                                    <td>
-                                                                            <a href="2c847a2272413940533273605c56c65f0e97f1bd5e82ef39c5488d840898faa9.html">Task Management</a>
-                                                                    </td>
-                                                                    <td>
-                                                                        <a href="19dd89948d23f074278e238d5778848be725542989626e30dd94028f0fc18f5c.html">Add Task Management Success</a>
-                                                                    </td>
-                                                                    <td><span class='context-icon'><i class='bi bi-browser-chrome' title='Chrome'></i> <i class='bi bi-windows' title='Windows'></i></span><span style="display:none">Chrome,windows</span> </td>
-                                                                    <td>8</td>
-                                                                    <td>16:39:13</td>
-                                                                    <td>9s 429ms</td>
-                                                                    <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
-                                                                                style="display:none">SUCCESS</span>
-                                                                    </td>
-                                                                </tr>
-                                                                    <tr class="scenario-result SUCCESS">
-                                                                        <td>
-                                                                                <a href="2c847a2272413940533273605c56c65f0e97f1bd5e82ef39c5488d840898faa9.html">Task Management</a>
-                                                                        </td>
-                                                                        <td>
-                                                                            <i class="bi bi-table"
-                                                                               title="Data Driven Scenario">
-                                                                                <a href="342b93c4a50e39a37433ea3059f1ddc2f437681c2251e6640bab689476bc56f4.html">1: Edit Task Management </a>
-                                                                                    <br/>searchKey=MyEC, message=Data has been saved successfully.
-                                                                        </td>
-                                                                        <td><span class='context-icon'><i class='bi bi-browser-chrome' title='Chrome'></i> <i class='bi bi-windows' title='Windows'></i></span><span style="display:none">Chrome,windows</span> </td>
-                                                                        <td>9</td>
-                                                                        <td>16:39:23</td>
-                                                                        <td>10s 658ms</td>
-                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
-                                                                                    style="display:none">SUCCESS</span>
-                                                                        </td>
-                                                                    </tr>
-                                                                    <tr class="scenario-result SUCCESS">
-                                                                        <td>
-                                                                                <a href="2c847a2272413940533273605c56c65f0e97f1bd5e82ef39c5488d840898faa9.html">Task Management</a>
-                                                                        </td>
-                                                                        <td>
-                                                                            <i class="bi bi-table"
-                                                                               title="Data Driven Scenario">
-                                                                                <a href="ec752acc4c2502ab7d10b260b8a31275b453dc54b261cd091afa7e25dbc925a4.html">1: Delete Task Management </a>
-                                                                                    <br/>searchKey=MyEC, message=Delete successfully!
-                                                                        </td>
-                                                                        <td><span class='context-icon'><i class='bi bi-browser-chrome' title='Chrome'></i> <i class='bi bi-windows' title='Windows'></i></span><span style="display:none">Chrome,windows</span> </td>
-                                                                        <td>8</td>
-                                                                        <td>16:39:34</td>
-                                                                        <td>7s 320ms</td>
-                                                                        <td><a href='##beforetable'><i class='bi bi-check-circle-fill success-icon ' title='SUCCESS'></i></a> <span
-                                                                                    style="display:none">SUCCESS</span>
-                                                                        </td>
-                                                                    </tr>
-                                                        </tbody>
-                                                    </table>
+                                                    No automated tests were executed
 
                                             </div>
                                         </div>
@@ -739,54 +474,6 @@
                                             </div>
                                         </div>
 
-        <div class="row">
-            <div class="col-sm-12">
-                <h3>Tags</h3>
-                    <div class="card">
-                        <div class="card-body">
-                            <div>
-                                    <a href="3869f26f7edc626225d905c3181813148003b378600cbe062c2a9c5d7cd2d309.html">
-                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
-                                        <i class="bi bi-tag-fill"></i> Add Task Management&nbsp;&nbsp;&nbsp;1
-                                    </span>
-                                    </a>
-                                    <a href="e771e2d4db7bf4a3f06fd186e7d1b6840b0c474413b0564d9f88990a0e576092.html">
-                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
-                                        <i class="bi bi-tag-fill"></i> Task Management&nbsp;&nbsp;&nbsp;3
-                                    </span>
-                                    </a>
-                                    <a href="0f0c284d29a9ece3e890919ccd8b6cad93aec7d3e64d5cb17a28a33d203e04b1.html">
-                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
-                                        <i class="bi bi-tag-fill"></i> Edit Task Management&nbsp;&nbsp;&nbsp;1
-                                    </span>
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="card">
-                        <div class="card-body">
-                                <h5 class="card-title">Context</h5>
-                            <div>
-                                    <a href="6fe0671aeea9e76b6998ee682216d11c7748a4152740df0586f3c256ecb3f5da.html">
-                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
-                                        <i class="bi bi-tag-fill"></i> Chrome&nbsp;&nbsp;&nbsp;3
-                                    </span>
-                                    </a>
-                                    <a href="f55cf301e8f51d63aebeb8bc8dbe880df940586e2a502c7a3e24c2b639523f8f.html">
-                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
-                                        <i class="bi bi-tag-fill"></i> Windows&nbsp;&nbsp;&nbsp;3
-                                    </span>
-                                    </a>
-                                    <a href="59736924e81ea98f655ac8eba7cd96079d8d80131e0c4360daf32a724d0b38a0.html">
-                                    <span class="tag-badge badge" style="background-color:#b0cf73; margin:1em;padding:4px;">
-                                        <i class="bi bi-tag-fill"></i> Chrome, Windows&nbsp;&nbsp;&nbsp;3
-                                    </span>
-                                    </a>
-                            </div>
-                        </div>
-                    </div>
-            </div>
-        </div>
                                     </div>
                                 </div>
                             </div>
@@ -827,7 +514,7 @@
             datasets: [{
                 label: 'Test Results',
                 fill: false,
-                data: [{meta: 'Passing tests', value: 3}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                data: [{meta: 'Passing tests', value: 0}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
                 backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                 borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                 borderWidth: 1,
@@ -878,7 +565,7 @@
                         ctx.font = fontSize + "em sans-serif";
                         ctx.textBaseline = "middle";
 
-                        var text = "100%"
+                        var text = " "
                         textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
                         textY = (height / 2) - 40;
 
@@ -922,7 +609,7 @@
             datasets: [{
                 label: 'Feature Coverage',
                 fill: false,
-                data: [{meta: 'Passing tests', value: 3}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
+                data: [{meta: 'Passing tests', value: 0}, {meta: 'Pending tests', value: 0}, {meta: 'Ignored tests', value: 0}, {meta: 'Skipped tests', value: 0}, {meta: 'Aborted tests', value: 0}, {meta: 'Failing tests', value: 0}, {meta: 'Broken tests', value: 0}, {meta: 'Compromised tests', value: 0}],
                 backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                 borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                 borderWidth: 1,
@@ -973,7 +660,7 @@
                         ctx.font = fontSize + "em sans-serif";
                         ctx.textBaseline = "middle";
 
-                        var text = "100%"
+                        var text = " "
                         textX = 10 + Math.round((width - ctx.measureText(text).width) / 2);
                         textY = (height / 2) - 40;
 
@@ -1018,7 +705,7 @@
             datasets: [
                 {
                     label: 'Automated',
-                    data: [3,0,0,0,0,0,0,0],
+                    data: [0,0,0,0,0,0,0,0],
                     backgroundColor: ['rgba(153,204,51,0.5)','rgba(165, 199, 238, 0.5)','rgba(168, 168, 168, 0.5)','rgba(238, 224, 152, 0.75)','rgba(255, 153, 102, 0.5)','rgba(255, 22, 49, 0.5)','rgba(255, 97, 8, 0.5)','rgba(255, 104, 255, 0.5)','rgba(83, 50, 168, 0.5)'],
                     borderColor: ['rgba(153,204,51,1)','rgba(165, 199, 238, 1)','rgba(168, 168, 168, 1)','rgba(238, 224, 152, 1)','rgba(255, 153, 102, 1)','rgba(255, 22, 49, 1)','rgba(255, 97, 8, 1)','rgba(255, 104, 255, 1)','rgba(83, 50, 168, 1)'],
                     borderWidth: 1
@@ -1101,7 +788,7 @@
             datasets: [{
                 label: 'Number of tests per duration',
                 fill: false,
-                data: ['0','2','1','0','0','0','0','0'],
+                data: ['0','0','0','0','0','0','0','0'],
                 backgroundColor: 'rgba(83, 146, 255,0.5)',
                 borderColor: 'rgba(83, 146, 255, 1)',
             }]
