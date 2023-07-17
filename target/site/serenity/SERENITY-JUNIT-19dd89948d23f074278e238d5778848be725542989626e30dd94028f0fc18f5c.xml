@@ -1,1 +1,78 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="0" failures="0" name="Task Management" skipped="0" tests="3" time="27.43" timestamp="2023-07-07 04:39:13"><testcase name="Add Task Management Success"/><testcase name="Edit Task Management"/><testcase name="Delete Task Management"/></testsuite>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><testsuite errors="1" failures="2" name="Task Management" skipped="17" tests="20" time="45.92" timestamp="2023-07-17 02:37:13"><testcase name="Add Task Management Success"><error message="The following error occurred: unknown error: net::ERR_CONNECTION_TIMED_OUT&#10;  (Session info: chrome=114.0.5735.199)&#10;Build info: version: '4.10.0', revision: 'c14d967899'&#10;System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.19'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [cb0a4926016120e74732529fc9618026, get {url=http://192.168.3.114:3012/auth/login}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\USER\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:57029}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57029/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}&#10;Session ID: cb0a4926016120e74732529fc9618026" type="org.openqa.selenium.WebDriverException">The following error occurred: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=114.0.5735.199)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cb0a4926016120e74732529fc9618026, get {url=http://192.168.3.114:3012/auth/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\USER\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:57029}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57029/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cb0a4926016120e74732529fc9618026</error><system-err>The following error occurred: unknown error: net::ERR_CONNECTION_TIMED_OUT
+  (Session info: chrome=114.0.5735.199)
+Build info: version: '4.10.0', revision: 'c14d967899'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '11.0.19'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [cb0a4926016120e74732529fc9618026, get {url=http://192.168.3.114:3012/auth/login}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 114.0.5735.199, chrome: {chromedriverVersion: 114.0.5735.90 (386bc09e8f4f..., userDataDir: C:\Users\USER\AppData\Local...}, goog:chromeOptions: {debuggerAddress: localhost:57029}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:57029/devtoo..., se:cdpVersion: 114.0.5735.199, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: cb0a4926016120e74732529fc9618026&#13;
+cucumber.starter@1.0.0-SNAPSHOT/vmo.openurl.NavigateTo.openBrowser(NavigateTo.java:16)&#13;
+cucumber.starter@1.0.0-SNAPSHOT/vmo.hooks.HookTaskManagement.login(HookTaskManagement.java:26)&#13;
+io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
+io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
+io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;
+io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)&#13;
+io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)&#13;
+io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)&#13;
+io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)&#13;
+io.cucumber.core.runner.TestStep.run(TestStep.java:56)&#13;
+io.cucumber.core.runner.TestCase.run(TestCase.java:78)&#13;
+io.cucumber.core.runner.Runner.runPickle(Runner.java:75)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)&#13;
+io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)&#13;
+io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:330)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:51)&#13;
+</system-err></testcase><testcase name="Edit Task Management"><failure message="Invalid URL: " type="java.lang.AssertionError">Invalid URL: </failure><system-err>Invalid URL: &#13;
+cucumber.starter@1.0.0-SNAPSHOT/vmo.openurl.NavigateTo.openBrowser(NavigateTo.java:16)&#13;
+cucumber.starter@1.0.0-SNAPSHOT/vmo.hooks.HookTaskManagement.login(HookTaskManagement.java:26)&#13;
+io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
+io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
+io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;
+io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)&#13;
+io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)&#13;
+io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)&#13;
+io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)&#13;
+io.cucumber.core.runner.TestStep.run(TestStep.java:56)&#13;
+io.cucumber.core.runner.TestCase.run(TestCase.java:78)&#13;
+io.cucumber.core.runner.Runner.runPickle(Runner.java:75)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)&#13;
+io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)&#13;
+io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:330)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:51)&#13;
+</system-err></testcase><testcase name="Delete Task Management"><failure message="Invalid URL: " type="java.lang.AssertionError">Invalid URL: </failure><system-err>Invalid URL: &#13;
+cucumber.starter@1.0.0-SNAPSHOT/vmo.openurl.NavigateTo.openBrowser(NavigateTo.java:16)&#13;
+cucumber.starter@1.0.0-SNAPSHOT/vmo.hooks.HookTaskManagement.login(HookTaskManagement.java:26)&#13;
+io.cucumber.java.Invoker.doInvoke(Invoker.java:66)&#13;
+io.cucumber.java.Invoker.invoke(Invoker.java:24)&#13;
+io.cucumber.java.AbstractGlueDefinition.invokeMethod(AbstractGlueDefinition.java:47)&#13;
+io.cucumber.java.JavaHookDefinition.execute(JavaHookDefinition.java:64)&#13;
+io.cucumber.core.runner.CoreHookDefinition.execute(CoreHookDefinition.java:46)&#13;
+io.cucumber.core.runner.HookDefinitionMatch.runStep(HookDefinitionMatch.java:21)&#13;
+io.cucumber.core.runner.TestStep.executeStep(TestStep.java:84)&#13;
+io.cucumber.core.runner.TestStep.run(TestStep.java:56)&#13;
+io.cucumber.core.runner.TestCase.run(TestCase.java:78)&#13;
+io.cucumber.core.runner.Runner.runPickle(Runner.java:75)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.lambda$runTestCase$5(CucumberExecutionContext.java:130)&#13;
+io.cucumber.core.runtime.RethrowingThrowableCollector.executeAndThrow(RethrowingThrowableCollector.java:23)&#13;
+io.cucumber.core.runtime.CucumberExecutionContext.runTestCase(CucumberExecutionContext.java:130)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:144)&#13;
+io.cucumber.junit.FeatureRunner.runChild(FeatureRunner.java:28)&#13;
+io.cucumber.junit.FeatureRunner.run(FeatureRunner.java:137)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:330)&#13;
+io.cucumber.junit.CucumberSerenityBaseRunner.runChild(CucumberSerenityBaseRunner.java:51)&#13;
+</system-err></testcase></testsuite>
