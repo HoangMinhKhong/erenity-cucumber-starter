@@ -52,7 +52,7 @@ public class TaskManagementStepDefinitions extends UIInteractionSteps {
 
 
     //Edit task management steps
-    @When("User search {} to edit/delete")
+    @When("User search {string} to edit/delete")
     public void userSearchSearchKeyToEdit(String search) {
         taskAction.searchTask(search);
     }
