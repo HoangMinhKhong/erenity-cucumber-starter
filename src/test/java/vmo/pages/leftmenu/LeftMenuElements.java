@@ -8,6 +8,8 @@ public class LeftMenuElements {
     static By SOPHIA_NEW_PROJECT = By.xpath("(//div[@class='sc-dLMFU eKursX'])[2]");
     static By SOPHIA_RETRIEVE = By.xpath("//div[@class='sc-dLMFU kffGpp']");
     static By NEW_PROJECT_22 = By.xpath("//div[@class='sc-dLMFU cwnGL']");
+    static By MENU_ACTIVITY_LOG = By.xpath("//div[@role='menuitem']//span[text()='Activity Log']");
+    static By SUBMENU_ACTIVITY_LOG = By.xpath("//li[@role='menuitem']//span[text()='Activity Log']");
 
     static By MENU(String menu) {
         return By.xpath("//span[text()='" + menu + "']");

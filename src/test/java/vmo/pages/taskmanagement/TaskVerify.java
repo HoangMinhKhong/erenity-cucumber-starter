@@ -2,8 +2,8 @@ package vmo.pages.taskmanagement;
 
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.steps.UIInteractionSteps;
-import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
+import vmo.helper.AggregatedAsserts;
 import vmo.helper.ElementHelper;
 import vmo.pages.login.LoginElements;
 
@@ -11,7 +11,8 @@ import static org.assertj.core.api.Assertions.assertThat;
 
 
 public class TaskVerify extends UIInteractionSteps {
-    ElementHelper elementHelper = new ElementHelper();
+    private ElementHelper elementHelper = new ElementHelper();
+    private AggregatedAsserts asserts = new AggregatedAsserts();
 
     public void verifyTextBoxSearchDisplay() {
         assertThat($(LoginElements.ACCOUT_TEXTBOX).isDisplayed()).isTrue();
@@ -44,24 +45,25 @@ public class TaskVerify extends UIInteractionSteps {
 
     public void messageSuccessShouldBeDisplay() {
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.MSG_SUCCESS)));
-        assertThat($(TaskElements.MSG_SUCCESS).isDisplayed());
+        assertThat($(TaskElements.MSG_SUCCESS).isDisplayed()).isTrue();
     }
 
     public void messageSuccessShouldContain(String msg) {
         assertThat($(TaskElements.MSG_SUCCESS).getAttribute("innerHTML")).isEqualTo(msg);
     }
 
-    public void verifyEditSuccess(String session){
+    public void verifyEditSuccess(String session) {
         String afterEdit = elementHelper.getSession(session);
         assertThat($(TaskElements.SEARCH_RESULT(afterEdit)).isDisplayed()).isTrue();
     }
 
-    public void verifyDeleteSuccess(String session){
+    public void verifyDeleteSuccess(String session) {
         String afterDelete = elementHelper.getSession(session);
-        assertThat($(TaskElements.SEARCH_RESULT(afterDelete)).shouldNotBeVisible());
+        Boolean notPresent = ExpectedConditions.not(ExpectedConditions.presenceOfElementLocated($(TaskElements.SEARCH_RESULT(afterDelete)))).apply(getDriver());
+        asserts.assertTrue("Verify delete success", notPresent);
     }
 
-    public void picShouldBeCorrect(String session){
+    public void picShouldBeCorrect(String session) {
         String pic = elementHelper.getSession(session);
         assertThat($(TaskElements.SELECTED_PIC).getText().trim()).isEqualTo(pic);
     }

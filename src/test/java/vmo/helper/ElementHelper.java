@@ -1,9 +1,11 @@
 package vmo.helper;
 
 
+import io.cucumber.datatable.DataTable;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.steps.UIInteractionSteps;
+import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.Keys;
@@ -17,6 +19,7 @@ import java.util.*;
 
 public class ElementHelper extends UIInteractionSteps {
     private static final Logger logger = LogHelper.getLogger();
+    private AggregatedAsserts asserts = new AggregatedAsserts();
 
     public By getElementBy(String name, String tempXpath) {
         String actualXpath = tempXpath.replace("${name}", name);
@@ -135,11 +138,34 @@ public class ElementHelper extends UIInteractionSteps {
         return value;
     }
 
+    public void click(By locator) {
+        try {
+            logger.debug("Click on element...");
+            WebElement webElement = getDriver().findElement(locator);
+            webElement.click();
+            logger.info("User has User has already clicked on element");
+        } catch (Exception e) {
+            logger.error(MessageFormat.format("User cannot click on element because {0}", e.getMessage()));
+        }
+    }
+
     public void clickByJS(WebElement webElement) {
         try {
             logger.debug(MessageFormat.format("Click on web element {0}", webElement));
             ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", webElement);
-            logger.info("Already click on element");
+            logger.info("User has already click on element");
+        } catch (Exception e) {
+            logger.error(MessageFormat.format("Cannot click element because {0}", e.getMessage()));
+        }
+    }
+
+    public void clickByJS(By locator) {
+        try {
+            logger.debug(MessageFormat.format("Click on web element {0}", locator));
+            highlightElement(locator);
+            WebElement webElement = getDriver().findElement(locator);
+            ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", webElement);
+            logger.info("User has already click on element");
         } catch (Exception e) {
             logger.error(MessageFormat.format("Cannot click element because {0}", e.getMessage()));
         }
@@ -161,10 +187,27 @@ public class ElementHelper extends UIInteractionSteps {
         String text = "";
         try {
             logger.debug("Get text from element");
+            highlightElement(element);
             WebElement webElement = getDriver().findElement(element);
             highlightElement(element);
             text = (String) ((JavascriptExecutor) getDriver()).executeScript("return arguments[0].innerText;", webElement);
-            logger.info("Already get text from element");
+            logger.info("User has already get text from element");
+            return text;
+        } catch (Exception e) {
+            logger.error(MessageFormat.format("Cannot get text because of {0}", e.getMessage()));
+        }
+        return null;
+    }
+
+    public String getText(By element) {
+        String text = "";
+        try {
+            logger.debug("Get text from element");
+            highlightElement(element);
+            WebElement webElement = getDriver().findElement(element);
+            highlightElement(element);
+            text = webElement.getText();
+            logger.info("User has already get text from element");
             return text;
         } catch (Exception e) {
             logger.error(MessageFormat.format("Cannot get text because of {0}", e.getMessage()));
@@ -188,7 +231,7 @@ public class ElementHelper extends UIInteractionSteps {
             Actions actions = new Actions(getDriver());
             WebElement webElement = getDriver().findElement(locator);
             actions.contextClick(webElement).perform();
-            logger.info("Already right lick on element");
+            logger.info("User has already right lick on element");
         } catch (Exception e) {
             logger.error(MessageFormat.format("Cannot perform right click on element because {0}", e.getMessage()));
         }
@@ -201,10 +244,89 @@ public class ElementHelper extends UIInteractionSteps {
             Actions actions = new Actions(getDriver());
             WebElement webElement = getDriver().findElement(locator);
             actions.doubleClick(webElement).perform();
-            logger.info("Already double lick on element");
+            logger.info("User has already double lick on element");
         } catch (Exception e) {
             logger.error(MessageFormat.format("Cannot perform double click on element because {0}", e.getMessage()));
         }
+    }
+
+    public void validateDataInTable(DataTable dataTable, By locator) {
+        WebElement htmlTableElement = getDriver().findElement(locator);//get the table WebElement
+        List<WebElement> rowElements = htmlTableElement.findElements(By.xpath(".//tr")); //get all row WebElements from the table
+        rowElements.remove(0); // remove "header" row from list row WebElements
+
+        List<List<String>> dataTableRows = dataTable.asLists(); //outer List<> is rows, inner List<> is cells
+        for (List<String> row : dataTableRows) { //loop through every row in the DataTable input
+            int rowIndex = dataTableRows.indexOf(row);
+            WebElement rows = rowElements.get(rowIndex); //get the row WebElement based on the index of the current row in the DataTable
+            List<WebElement> cells = rows.findElements(By.xpath(".//td"));//get all cells from the row WebElement
+
+            for (String expectedCell : row) {
+                int cellIndex = row.indexOf(expectedCell);
+                String actualTextOfCell = cells.get(cellIndex).getText();
+
+                 /*
+                System.out.println for demonstration purposes
+                 */
+                System.out.println("DataTable row " + rowIndex + ", cell " + cellIndex + ": " + expectedCell);
+                System.out.println("Actual value on the page: " + actualTextOfCell);
+
+                Assert.assertEquals("Expected value of cell should match actual value of cell",
+                        expectedCell, actualTextOfCell);
+            }
+        }
+    }
+
+    //verify all column exclude EntityID
+    public void validateDataInTableShortVersion(DataTable dataTable, By locator) {
+        WebElement htmlTableElement = getDriver().findElement(locator);//get the table WebElement
+        List<WebElement> rowElements = htmlTableElement.findElements(By.xpath(".//tr")); //get all row WebElements from the table
+        rowElements.remove(0); // remove "header" row from list row WebElements
+
+        List<List<String>> dataTableRows = dataTable.asLists(); //outer List<> is rows, inner List<> is cells
+        for (List<String> row : dataTableRows) { //loop through every row in the DataTable input
+            int rowIndex = dataTableRows.indexOf(row);
+            WebElement rows = rowElements.get(rowIndex); //get the row WebElement based on the index of the current row in the DataTable
+            List<WebElement> cells = rows.findElements(By.xpath(".//td"));//get all cells from the row WebElement
+            cells.remove(2);//remove column EntityID
+            cells.remove(6);//remove column Created At
+
+            for (String expectedCell : row) {
+                int cellIndex = row.indexOf(expectedCell);
+                String actualTextOfCell = cells.get(cellIndex).getText();
+
+                 /*
+                System.out.println for demonstration purposes
+                 */
+                System.out.println("DataTable row " + rowIndex + ", cell " + cellIndex + ": " + expectedCell);
+                System.out.println("Actual value on the page: " + actualTextOfCell);
+
+                asserts.assertEquals("Expected value of cell should match actual value of cell",
+                        expectedCell, actualTextOfCell);
+            }
+        }
+    }
+
+    public void inputText(By locator, String text) {
+        try {
+            logger.debug("Check text is empty...");
+            if (!text.isEmpty()) {
+                logger.debug("Input text to element...");
+                highlightElement(locator);
+                WebElement webElement = getDriver().findElement(locator);
+                webElement.sendKeys(text);
+                logger.info("User has already input to element");
+            } else {
+                logger.error("Text is empty, please check your input");
+            }
+        } catch (Exception e) {
+            logger.error(MessageFormat.format("Cannot input text to element because {0}", e.getMessage()));
+        }
+    }
+
+    public void validateMessage(String expected, String actual) {
+        logger.debug("Checking message display...");
+        asserts.assertEquals("Assert that expected string equals actual string", expected, actual);
     }
 }
 

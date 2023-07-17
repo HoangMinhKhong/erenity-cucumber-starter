@@ -17,6 +17,6 @@ public class LeftMenuStepDefinition {
 
     @When("User follow path to access screen")
     public void accessPage(DataTable dataTable){
-        leftMenuActions.navigateToTemplate(dataTable);
+        leftMenuActions.navigateToScreen(dataTable);
     }
 }

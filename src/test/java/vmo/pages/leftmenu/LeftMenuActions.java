@@ -4,6 +4,7 @@ import io.cucumber.datatable.DataTable;
 import net.serenitybdd.core.steps.UIInteractionSteps;
 import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 import vmo.helper.ElementHelper;
 
 import java.util.List;
@@ -31,12 +32,20 @@ public class LeftMenuActions extends UIInteractionSteps {
         }
     }
 
-    @Step("Navigate to template")
-    public void navigateToTemplate(DataTable dataTable){
+    @Step("Navigate to screen")
+    public void navigateToScreen(DataTable dataTable){
         List<List<String>> menu = dataTable.asLists(String.class);
         for (List<String> data: menu){
             WebElement webElement = $(LeftMenuElements.MENU(data.get(0))).getElement();
             helper.clickByJS(webElement);
         }
+    }
+
+    @Step("Navigate to Activity Log screen")
+    public void navigateToActivityLogScreen(){
+        waitFor(ExpectedConditions.visibilityOf($(LeftMenuElements.MENU_ACTIVITY_LOG)));
+        $(LeftMenuElements.MENU_ACTIVITY_LOG).click();
+        waitFor(ExpectedConditions.visibilityOf($(LeftMenuElements.SUBMENU_ACTIVITY_LOG)));
+        $(LeftMenuElements.SUBMENU_ACTIVITY_LOG).click();
     }
 }
