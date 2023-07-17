@@ -3,7 +3,6 @@ package vmo.pages.taskmanagement;
 import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.WebElementFacade;
 import net.serenitybdd.core.steps.UIInteractionSteps;
-import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -15,25 +14,23 @@ import java.util.List;
 public class TaskAction extends UIInteractionSteps {
     ElementHelper elementHelper = new ElementHelper();
 
-    @Step
     public void clickOnTaskManagement() {
+//        elementHelper.delayInSeconds(1);
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.TASK_MANAGEMENT)));
         $(TaskElements.TASK_MANAGEMENT).withTimeoutOf(Duration.ofSeconds(10)).click();
     }
 
-    @Step
     public void clickOnButtonAdd() {
         $(TaskElements.BUTTON_ADD).click();
     }
 
-    @Step
     public void clickChooseMeeting() {
+//        elementHelper.delayInSeconds(1);
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.MEETING_SEARCH)));
         $(TaskElements.MEETING_SEARCH).click();
         $(TaskElements.MEETING_MYEC).click();
     }
 
-    @Step
     public void enterTaskName(String taskName) {
         elementHelper.clearText($(TaskElements.TASK_NAME));
         String rd = taskName + elementHelper.randomString(5);
@@ -41,22 +38,21 @@ public class TaskAction extends UIInteractionSteps {
         $(TaskElements.TASK_NAME).sendKeys(rd);
     }
 
-    @Step
     public void clickChoosePriority() {
         $(TaskElements.DDL_PRIORITY).click();
         $(TaskElements.PRIORITY_NORMAL).click();
     }
 
-    @Step
     public void removeOldDate(WebElementFacade webElementFacade) {
+//        waitFor(ExpectedConditions.visibilityOf($(webElementFacade)));
         Actions actions = new Actions(getDriver());
         WebElement webElement = webElementFacade.getElement();
         actions.moveToElement(webElement).perform();
         webElement.click();
     }
 
-    @Step
     public void removeOldDateAndChooseNewDate() {
+//        elementHelper.delayInSeconds(1);
         removeOldDate($(TaskElements.IC_DELETE_DATE));
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.DUE_DATA)));
         $(TaskElements.DUE_DATA).click();
@@ -64,15 +60,15 @@ public class TaskAction extends UIInteractionSteps {
         $(TaskElements.TODAY).click();
     }
 
-    @Step
     public void chooseNewDate() {
+//        elementHelper.delayInSeconds(1);
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.DUE_DATA)));
         $(TaskElements.DUE_DATA).click();
+//        elementHelper.delayInSeconds(1);
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.TODAY)));
         $(TaskElements.TODAY).click();
     }
 
-    @Step
     public void clickChoosePIC() {
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.PIC)));
         $(TaskElements.PIC).click();
@@ -84,7 +80,6 @@ public class TaskAction extends UIInteractionSteps {
         elementHelper.clickByJS(value.get(0));
     }
 
-    @Step
     public void searchTask(String searchKey) {
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.TXT_SEARCH)));
         WebElement element = $(TaskElements.TXT_SEARCH).getElement();
@@ -96,13 +91,11 @@ public class TaskAction extends UIInteractionSteps {
         }
     }
 
-    @Step
     public void clickEditButton(String name) {
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.EDIT_BTN(name))));
         $(TaskElements.EDIT_BTN(name)).click();
     }
 
-    @Step
     public void clickDeleteButton(String name) {
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.DELETE_BTN(name))));
         $(TaskElements.DELETE_BTN(name)).click();
@@ -127,8 +120,8 @@ public class TaskAction extends UIInteractionSteps {
         $(TaskElements.REPORTER).click();
     }
 
-    @Step
     public void selectPIC() {
+//        elementHelper.delayInSeconds(2);
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.DDL_PIC)));
         $(TaskElements.DDL_PIC).click();
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.PIC_LIST)));
@@ -139,7 +132,6 @@ public class TaskAction extends UIInteractionSteps {
         list.get(1).click();
     }
 
-    @Step
     public void inputNote(String note) {
         elementHelper.clearText($(TaskElements.TXA_NOTE));
         $(TaskElements.TXA_NOTE).sendKeys(note + elementHelper.randomString(10));
@@ -150,13 +142,11 @@ public class TaskAction extends UIInteractionSteps {
         $(TaskElements.BTN_CANCEL).click();
     }
 
-    @Step
     public void submitEdit() {
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.BTN_SAVE)));
         $(TaskElements.BTN_SAVE).click();
     }
 
-    @Step
     public void clickConfirmDelete() {
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.BTN_CONFIRM)));
         $(TaskElements.BTN_CONFIRM).click();
