@@ -6,6 +6,7 @@ import net.thucydides.core.annotations.Step;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import vmo.helper.ElementHelper;
+import vmo.pages.common.CommonElements;
 
 import java.util.List;
 
@@ -38,6 +39,7 @@ public class LeftMenuActions extends UIInteractionSteps {
         for (List<String> data: menu){
             WebElement webElement = $(LeftMenuElements.MENU(data.get(0))).getElement();
             helper.clickByJS(webElement);
+            waitFor(ExpectedConditions.visibilityOf($(CommonElements.IP_SEARCH)));
         }
     }
 
@@ -47,5 +49,6 @@ public class LeftMenuActions extends UIInteractionSteps {
         $(LeftMenuElements.MENU_ACTIVITY_LOG).click();
         waitFor(ExpectedConditions.visibilityOf($(LeftMenuElements.SUBMENU_ACTIVITY_LOG)));
         $(LeftMenuElements.SUBMENU_ACTIVITY_LOG).click();
+        waitFor(ExpectedConditions.visibilityOf($(CommonElements.IP_SEARCH)));
     }
 }

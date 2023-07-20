@@ -288,6 +288,7 @@ public class ElementHelper extends UIInteractionSteps {
             int rowIndex = dataTableRows.indexOf(row);
             WebElement rows = rowElements.get(rowIndex); //get the row WebElement based on the index of the current row in the DataTable
             List<WebElement> cells = rows.findElements(By.xpath(".//td"));//get all cells from the row WebElement
+            cells.remove(1);//remove column Entity Name
             cells.remove(2);//remove column EntityID
             cells.remove(6);//remove column Created At
 

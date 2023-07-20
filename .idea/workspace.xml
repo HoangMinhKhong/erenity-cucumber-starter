@@ -7,12 +7,15 @@
     <list default="true" id="1692fd34-67e2-46a3-b54f-962e74959333" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/vmo/helper/ElementHelper.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/vmo/helper/ElementHelper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/vmo/pages/asset/AssetActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/vmo/pages/asset/AssetActions.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/vmo/pages/asset/AssetElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/vmo/pages/asset/AssetElements.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/vmo/pages/asset/AssetVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/vmo/pages/asset/AssetVerify.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/vmo/pages/common/CommonElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/vmo/pages/common/CommonElements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/vmo/pages/leftmenu/LeftMenuActions.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/vmo/pages/leftmenu/LeftMenuActions.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/test/java/vmo/pages/leftmenu/LeftMenuElements.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/vmo/pages/leftmenu/LeftMenuElements.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/vmo/pages/taskmanagement/TaskVerify.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/vmo/pages/taskmanagement/TaskVerify.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/vmo/steps/LeftMenuStepDefinition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/vmo/steps/LeftMenuStepDefinition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/features/datamanagement/qccheck/DataManagement.feature" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/features/datamanagement/qccheck/DataManagement.feature" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/resources/serenity.conf" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/resources/serenity.conf" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +61,7 @@
                 <list>
                   <RecentBranch>
                     <option name="branchName" value="opreX" />
-                    <option name="lastUsedInstant" value="1689038381" />
+                    <option name="lastUsedInstant" value="1689579994" />
                   </RecentBranch>
                   <RecentBranch>
                     <option name="branchName" value="edit-task-management3" />
@@ -74,9 +77,9 @@
     </option>
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/src/test/java/vmo/pages/homepage/HomePageElements.java" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/src/test/java/vmo/pages/taskmanagement/TaskElements.java" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/src/test/java/vmo/pages/homepage/HomePageActions.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/vmo/pages/taskmanagement/TaskElements.java" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/src/test/java/vmo/pages/homepage/HomePageElements.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="ProjectId" id="2SBiJYsDvvqhxDCfOkfG4qXyRpI" />
   <component name="ProjectLevelVcsManager">

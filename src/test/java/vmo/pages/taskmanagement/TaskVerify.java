@@ -60,7 +60,7 @@ public class TaskVerify extends UIInteractionSteps {
     public void verifyDeleteSuccess(String session) {
         String afterDelete = elementHelper.getSession(session);
         Boolean notPresent = ExpectedConditions.not(ExpectedConditions.presenceOfElementLocated($(TaskElements.SEARCH_RESULT(afterDelete)))).apply(getDriver());
-        asserts.assertTrue("Verify delete success", notPresent);
+        asserts.assertTrue("Verify delete success", Boolean.TRUE.equals(notPresent));
     }
 
     public void picShouldBeCorrect(String session) {
