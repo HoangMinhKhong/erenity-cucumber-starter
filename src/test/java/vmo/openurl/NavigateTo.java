@@ -1,14 +1,27 @@
 package vmo.openurl;
 
-import net.serenitybdd.screenplay.Performable;
-import net.serenitybdd.screenplay.Task;
+import net.serenitybdd.screenplay.Actor;
+import net.serenitybdd.screenplay.abilities.BrowseTheWeb;
 import net.serenitybdd.screenplay.actions.Open;
+import net.thucydides.core.annotations.Managed;
 import net.thucydides.core.annotations.Step;
+import net.thucydides.core.webdriver.CloseBrowser;
+import org.openqa.selenium.WebDriver;
 
 public class NavigateTo {
-    WikipediaHomePage wikipediaHomePage;
-    @Step("Open home page")
-    public void open_home_page(){
-        wikipediaHomePage.open() ;
+
+    MyECHomePage myECHomePage;
+    @Step("Open browser")
+    public void openBrowser() {
+        myECHomePage.open();
+    }
+
+//    public void openBrowser(String url) {
+//        myECHomePage.openUrl(url);
+//    }
+
+    @Step("Close browser")
+    public void closeBrowser(){
+        myECHomePage.getDriver().close();
     }
 }
