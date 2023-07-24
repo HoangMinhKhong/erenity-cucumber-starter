@@ -1,4 +1,0 @@
-"Story","Title","Result","Date","Stability","Duration (s)"
-"Task Management","Add Task Management Success","ERROR","2023-07-17T14:37:13.7089715+07:00[Asia/Bangkok]","0.0","44.85"
-"Task Management","Edit Task Management","FAILURE","2023-07-17T14:37:58.6348602+07:00[Asia/Bangkok]","0.0","0.65"
-"Task Management","Delete Task Management","FAILURE","2023-07-17T14:37:59.2991246+07:00[Asia/Bangkok]","0.0","0.42"

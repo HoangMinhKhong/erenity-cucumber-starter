@@ -26,9 +26,10 @@ Feature: Task Management
     Then System shows success message should be "<message>"
     Then Verify that edit data success
     Examples:
-      | searchKey | message                           |
-      | MyEC      | Data has been saved successfully. |
+      | searchKey | message                         |
+      | MyEC      | Data has been saved successfull |
 
+  @DeleteTaskManagement
   Scenario Outline: Delete Task Management
     When User search "<searchKey>" to edit
     And Search result should be contain "<searchKey>"
@@ -38,5 +39,5 @@ Feature: Task Management
     Then System shows success message should be "<message>"
     Then Verify that delete data success
     Examples:
-      | searchKey | message              |
-      | MyEC      | Delete successfully! |
+      | searchKey | message             |
+      | MyEC      | Delete successfully |
