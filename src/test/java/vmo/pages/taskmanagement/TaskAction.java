@@ -11,7 +11,7 @@ import vmo.helper.ElementHelper;
 import java.time.Duration;
 import java.util.List;
 
-public class TaskAction extends UIInteractionSteps {
+public class TaskAction extends ElementHelper {
     ElementHelper elementHelper = new ElementHelper();
 
     public void clickOnTaskManagement() {
@@ -93,7 +93,8 @@ public class TaskAction extends UIInteractionSteps {
 
     public void clickEditButton(String name) {
         waitFor(ExpectedConditions.visibilityOf($(TaskElements.EDIT_BTN(name))));
-        $(TaskElements.EDIT_BTN(name)).click();
+        clickToElement(TaskElements.EDIT_BTNN, name);
+//        $(TaskElements.EDIT_BTN(name)).click();
     }
 
     public void clickDeleteButton(String name) {

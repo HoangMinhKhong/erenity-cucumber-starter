@@ -17,6 +17,7 @@ import java.util.*;
 
 public class ElementHelper extends UIInteractionSteps {
     private static final Logger LOGGER = LoggerFactory.getLogger(ElementHelper.class);
+    WebElement element;
 
     public By getElementBy(String name, String tempXpath) {
         String actualXpath = tempXpath.replace("${name}", name);
@@ -135,8 +136,24 @@ public class ElementHelper extends UIInteractionSteps {
         return value;
     }
 
-    public void clickByJS(WebElement webElement){
+    public void clickByJS(WebElement webElement) {
         ((JavascriptExecutor) getDriver()).executeScript("arguments[0].click();", webElement);
+    }
+
+    public void clickToElement(By element) {
+        this.element = getDriver().findElement(element);
+        this.element.click();
+    }
+
+    public void clickToElement(String locator, String... values) {
+        locator = String.format(locator, (Object[])values);
+        this.element = getDriver().findElement(By.xpath(locator));
+        this.element.click();
+    }
+
+    public void sendKeyToElement(By element, String key) {
+        this.element = getDriver().findElement(element);
+        this.element.sendKeys(key);
     }
 
 }
