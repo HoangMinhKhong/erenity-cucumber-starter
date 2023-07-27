@@ -27,7 +27,7 @@ Feature: Task Management
     Then Verify that edit data success
     Examples:
       | searchKey | message                         |
-      | MyEC      | Data has been saved successfull |
+      | MyEC      | Data has been saved successfully. |
 
   @DeleteTaskManagement
   Scenario Outline: Delete Task Management

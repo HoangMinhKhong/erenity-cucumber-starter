@@ -33,7 +33,7 @@ public class TaskElements extends PageObject{
     }
 
     //edit locators
-    public static String EDIT_BTN = "//div[text()='${name}']//ancestor::tr[@data-row-key]//button[1]";
+    public static String EDIT_BTNN = "//div[text()='%s']//ancestor::tr[@data-row-key]//button[1]";
     public static By EDIT_BTN(String search){
         String EDIT_BTN = "//div[text()='${name}']//ancestor::tr[@data-row-key]//button[1]";
         By result = elementHelper.getElementBy(search, EDIT_BTN);
